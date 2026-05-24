@@ -3,7 +3,7 @@ project:
   slug: "wnba-undervalued-contract-retrospective"
   subtitle: "A decision-support notebook reassessing five originally undervalued WNBA contracts through 2023-2025 production, 2026 salary context, and scalability signals."
   description: "This project revisits a five-player undervalued contract cohort to test which cases still hold up once the original hidden-value lens is reframed against 2026 salary levels, comparable-player context, and role-scalability evidence."
-  status: "in-progress"
+  status: "published"
   sport: "Women's Basketball"
   league: "WNBA"
   season: "2023-2026"
@@ -12,8 +12,8 @@ project:
   last_updated: "2026-05-23"
 
 links:
-  github_repo: ""
-  github_pages: ""
+  github_repo: "https://github.com/kbsmd-sportsmusicdata/hidden-value-contract-analysis"
+  github_pages: "https://kbsmd-sportsmusicdata.github.io/hidden-value-contract-analysis/"
   portfolio_page: ""
   tableau_public: ""
   notion_page: ""

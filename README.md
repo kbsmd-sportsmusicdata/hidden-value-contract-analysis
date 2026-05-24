@@ -6,13 +6,14 @@ This project revisits a five-player undervalued contract cohort to test which ca
 
 ## Live Project
 
-- HTML Notebook: GitHub Pages link pending deployment
+- HTML Notebook: https://kbsmd-sportsmusicdata.github.io/hidden-value-contract-analysis/
+- GitHub Repo: https://github.com/kbsmd-sportsmusicdata/hidden-value-contract-analysis
 - Portfolio Page:
 - Tableau Public:
 
 ## Project Status
 
-`in-progress`
+`published`
 
 ## Why This Project Matters
 
