@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>WNBA Undervalued Contract Retrospective</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@500;600;700;800&family=Oswald:wght@500;600;700&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@500;600;700;800&family=Oswald:wght@500;600;700&family=Permanent+Marker&display=swap');
 :root {
   --ink:#243143;
+  --navy:#1B2A41;
+  --navy-soft:#4E5D73;
   --violet:#5D5C9C;
   --violet-2:#7E7EB8;
   --lav:#ECEBFA;
@@ -22,6 +24,9 @@
   --coral:#E88D67;
   --orange:#C97064;
   --gold:#B8A87E;
+  --pct-gold-light:#F7DE88;
+  --pct-gold-mid:#D89A18;
+  --pct-gold-dark:#7A4E00;
   --gray:#707887;
   --line:#DED6C7;
   --shadow:0 18px 40px rgba(31, 23, 48, .13);
@@ -48,29 +53,29 @@ body{
 .hero-main{padding:34px 36px;position:relative;overflow:hidden}
 .hero-main:before{content:"";position:absolute;left:0;top:0;bottom:0;width:9px;background:linear-gradient(var(--violet),var(--steel))}
 .kicker{font-family:Oswald,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:700;margin:0 0 8px}
-h1{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(2.6rem,6vw,5.4rem);line-height:.93;margin:0;color:var(--violet)}
+h1{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(2.6rem,6vw,5.4rem);line-height:.93;margin:0;color:var(--navy)}
 .hero-main .lede{font-size:1.04rem;line-height:1.72;max-width:850px;color:#3e3c45;margin:22px 0 0}
 .highlight{background:linear-gradient(transparent 55%, rgba(244,227,195,.95) 55%);padding:0 3px}
 .note{padding:24px 24px;background:#f8e8c8;transform:rotate(.5deg);position:relative}
 .note:before{content:"";position:absolute;left:35%;top:-16px;width:130px;height:28px;background:rgba(220,190,139,.55);border-radius:3px;transform:rotate(-2deg)}
-.note h2{font-family:Oswald,sans-serif;text-transform:uppercase;margin:0 0 8px;color:var(--violet);font-size:1.5rem}
+.note h2{font-family:Oswald,sans-serif;text-transform:uppercase;margin:0 0 8px;color:var(--navy);font-size:1.5rem}
 .note p{margin:0;line-height:1.55}
 .section{margin:30px 0}
 .section-head{display:flex;gap:12px;align-items:center;margin:0 0 14px}
 .num{font-family:Oswald,sans-serif;background:var(--violet);color:white;border-radius:8px;padding:7px 11px;font-size:1.05rem;box-shadow:0 8px 18px rgba(63,29,102,.22)}
-.section-head h2{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--violet);font-size:2rem;margin:0}
+.section-head h2{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);font-size:2rem;margin:0}
 .method-box{padding:0;overflow:hidden}
-details summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;padding:22px 26px;font-weight:800;color:var(--violet);text-transform:uppercase;letter-spacing:.03em}
+details summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;padding:22px 26px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.03em}
 details summary::-webkit-details-marker{display:none}
 .chev{background:var(--lav);border:1px solid #d6c5ee;border-radius:999px;padding:9px 14px;font-size:.86rem;text-transform:none;letter-spacing:0}
 details[open] .chev:after{content:" ↑"} details:not([open]) .chev:after{content:" ↓"}
 .method-content{border-top:1px dashed #cdbde5;padding:22px 26px 26px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .method-card{background:white;border:1px solid var(--line);border-radius:18px;padding:18px}
-.method-card b{font-family:Oswald,sans-serif;text-transform:uppercase;color:var(--violet);font-size:1.08rem}
+.method-card b{font-family:Oswald,sans-serif;text-transform:uppercase;color:var(--navy);font-size:1.08rem}
 .method-card p{margin:8px 0 0;line-height:1.55;color:#4e4c56;font-size:.94rem}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .panel{padding:24px;overflow:hidden}
-.panel h3{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--violet);font-size:1.45rem;margin:0 0 8px}
+.panel h3{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);font-size:1.45rem;margin:0 0 8px}
 .panel p{line-height:1.62;color:#4f4c58}
 .badge-row{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:10px;margin-top:18px}
 .signal-badge,.table-badge{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:9px 13px;font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.02em}
@@ -84,7 +89,7 @@ details[open] .chev:after{content:" ↑"} details:not([open]) .chev:after{conten
 .card-top{display:grid;grid-template-columns:82px 1fr auto;gap:16px;align-items:start}
 .avatar{width:78px;height:78px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#cab7ed,var(--violet));display:grid;place-items:center;color:white;font-family:Oswald;font-size:1.7rem;box-shadow:inset 0 0 0 5px rgba(255,255,255,.45)}
 .eyebrow{font-family:Oswald;text-transform:uppercase;letter-spacing:.08em;color:var(--steel);font-weight:700;margin:0 0 3px!important;font-size:.84rem!important}
-.card-id h3{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:2.05rem;margin:0;color:var(--violet);line-height:1}
+.card-id h3{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:2.05rem;margin:0;color:var(--navy);line-height:1}
 .stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:13px}
 .stat-strip div{background:#f6f2ea;border:1px solid var(--line);border-radius:12px;padding:9px;text-align:center}
 .stat-strip span{display:block;color:var(--gray);font-size:.72rem;text-transform:uppercase;font-weight:800}
@@ -93,21 +98,25 @@ details[open] .chev:after{content:" ↑"} details:not([open]) .chev:after{conten
 .accuracy-badge.market{background:#f1f4f8;border-color:#9bb2cd;color:#2e5a7f} .accuracy-badge.mixed{background:#fff4e7;border-color:#d99e56;color:#9a5210}
 .accuracy-badge span{display:block;text-transform:uppercase;font-size:.68rem;color:#6a6670;font-weight:900}
 .accuracy-badge b{font-family:Oswald;text-transform:uppercase;font-size:1.05rem}
-blockquote{margin:18px 0;background:rgba(244,227,195,.55);border-left:5px solid var(--violet-2);border-radius:14px;padding:15px 17px;line-height:1.55}
+blockquote{margin:18px 0;background:rgba(244,227,195,.55);border:1.5px solid rgba(126,126,184,.26);border-left:5px solid var(--violet-2);border-radius:14px;padding:15px 17px;line-height:1.55}
+.player-card.strong blockquote{border-color:rgba(47,125,84,.30);border-left-color:var(--green)}
+.player-card.market blockquote{border-color:rgba(91,154,169,.34);border-left-color:var(--steel)}
+.player-card.mixed blockquote{border-color:rgba(201,112,100,.36);border-left-color:var(--orange)}
 .metric-bars{display:grid;gap:10px;margin:18px 0}
 .metric-label{display:flex;justify-content:space-between;gap:12px;font-weight:800;font-size:.84rem;color:#51515b;text-transform:uppercase}
-.metric-label strong{font-family:Inter,monospace;color:var(--violet)}
+.metric-label strong{font-family:Inter,monospace;color:var(--navy)}
 .track{height:12px;background:#eceff4;border-radius:999px;overflow:hidden}
-.fill{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--sage),var(--green))}
-.metric-row.eff .fill{background:linear-gradient(90deg,var(--sage),var(--green))}
-.metric-row.def .fill{background:linear-gradient(90deg,#C6B9E8,var(--violet-2))}
-.metric-row.reb .fill{background:linear-gradient(90deg,#EBCB96,var(--coral))}
-.metric-row.impact .fill{background:linear-gradient(90deg,var(--steel),var(--blue))}
-.metric-row.play .fill{background:linear-gradient(90deg,#C6B9E8,var(--violet-2))}
+.fill{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--pct-gold-light),var(--pct-gold-mid) 58%,var(--pct-gold-dark))}
+.metric-row.eff .fill,
+.metric-row.def .fill,
+.metric-row.reb .fill,
+.metric-row.impact .fill,
+.metric-row.play .fill,
+.metric-row.scoring .fill{background:linear-gradient(90deg,var(--pct-gold-light),var(--pct-gold-mid) 58%,var(--pct-gold-dark))}
 .signal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;border-top:1px dashed var(--line);padding-top:14px}
 .signal-grid div{background:white;border:1px solid var(--line);border-radius:14px;padding:10px;min-height:68px}
 .signal-grid span{display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gray);font-weight:900;margin-bottom:5px}
-.signal-grid b{font-size:.78rem;color:var(--violet)}
+.signal-grid b{font-size:.78rem;color:var(--navy)}
 .player-signal-badges{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -161,7 +170,6 @@ blockquote{margin:18px 0;background:rgba(244,227,195,.55);border-left:5px solid 
 .mock-badge.good{border-color:#9FC59D;color:#2F7D54;background:#EFF8EF}
 .mock-badge.positive{border-color:rgba(232,141,103,.55);color:var(--coral);background:#FFF2EC}
 @media(max-width:700px){.player-signal-badges{grid-template-columns:1fr}}
-
 .chart{display:grid;gap:14px;margin-top:18px}
 .chart-row{display:grid;grid-template-columns:160px 1fr 110px;align-items:center;gap:12px}
 .chart-label{font-family:Oswald;text-transform:uppercase;color:var(--ink)}
@@ -170,8 +178,6 @@ blockquote{margin:18px 0;background:rgba(244,227,195,.55);border-left:5px solid 
 .gap-bar{position:absolute;top:6px;height:16px;border-radius:999px;box-shadow:0 2px 5px rgba(0,0,0,.12)}
 .gap-bar.negative{right:50%;width:var(--w);background:linear-gradient(90deg,var(--blue),var(--steel))}
 .gap-bar.positive{left:50%;width:var(--w);background:linear-gradient(90deg,#F2A483,var(--coral))}
-.chart-row:hover .gap-bar{filter:drop-shadow(0 4px 7px rgba(36,49,67,.28));transform:scaleY(1.18)}
-.gap-bar{transition:filter .18s ease, transform .18s ease;transform-origin:center}
 .chart-value{font-family:Inter,monospace;font-weight:800} .negative{color:#2e5a7f} .positive{color:#ba553b}
 .mini-gap{padding:16px 0;border-top:1px dashed var(--line)} .mini-gap:first-child{border-top:0;padding-top:0}
 .mini-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
@@ -179,21 +185,22 @@ blockquote{margin:18px 0;background:rgba(244,227,195,.55);border-left:5px solid 
 .bar-line{display:grid;grid-template-columns:104px 1fr 90px;gap:12px;align-items:center;margin:8px 0;font-size:.82rem;text-transform:uppercase;font-weight:800;color:#5f6471}
 .rail{height:14px;background:#edf0f5;border-radius:999px;overflow:hidden} .rail i{display:block;height:100%;border-radius:999px} .rail .target{background:linear-gradient(90deg,var(--violet-2),var(--violet))} .rail .comp{background:linear-gradient(90deg,var(--steel),var(--blue))}
 table{width:100%;border-collapse:collapse;margin-top:14px;background:white;border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(31,23,48,.07)}
-th,td{padding:13px 14px;text-align:left;border-bottom:1px solid #ece5d8;font-size:.9rem} th{font-family:Oswald;text-transform:uppercase;color:var(--violet);letter-spacing:.04em;background:#f6f2ea} td:nth-child(n+3), th:nth-child(n+3){text-align:center}
+th,td{padding:13px 14px;text-align:left;border-bottom:1px solid #ece5d8;font-size:.9rem} th{font-family:Oswald;text-transform:uppercase;color:var(--navy);letter-spacing:.04em;background:#f6f2ea} td:nth-child(n+3), th:nth-child(n+3){text-align:center}
 .callout{background:linear-gradient(135deg,#f8e8c8,#fffaf1);border:1px solid #ead4a9;border-radius:22px;padding:22px;box-shadow:var(--shadow)}
-.callout h3{font-family:Oswald;text-transform:uppercase;color:var(--violet);margin:0 0 8px;font-size:1.45rem}
+.callout h3{font-family:Oswald;text-transform:uppercase;color:var(--navy);margin:0 0 8px;font-size:1.45rem}
 .placeholder{border:2px dashed #cbbadf;background:rgba(255,255,255,.58);border-radius:22px;padding:22px}
 .footer{margin-top:36px;padding:28px;border-radius:24px;background:var(--violet);color:white;box-shadow:var(--shadow)}
 .footer h2{font-family:Oswald;text-transform:uppercase;font-size:2rem;margin:0 0 10px}
 .footer p{line-height:1.65;max-width:880px}
-
 .avatar.headshot{overflow:hidden;background:var(--lav)}
 .avatar.headshot img{width:100%;height:100%;object-fit:cover;display:block}
 .coach-note{
-  font-family:'Rock Salt', cursive;
-  font-size:.92rem;
-  line-height:1.72;
-  color:var(--violet);
+  font-family:'Permanent Marker', cursive;
+  font-size:1.08rem;
+  font-weight:400;
+  letter-spacing:.01em;
+  line-height:1.58;
+  color:var(--navy);
   background:rgba(244,227,195,.68);
   border:1px solid rgba(212,165,116,.45);
   border-radius:16px;
@@ -201,7 +208,7 @@ th,td{padding:13px 14px;text-align:left;border-bottom:1px solid #ece5d8;font-siz
   transform:rotate(-.65deg);
   box-shadow:0 8px 20px rgba(36,49,67,.08);
 }
-.coach-note.small{font-size:.78rem;margin-top:12px;transform:rotate(.45deg);line-height:1.7}
+.coach-note.small{font-size:.96rem;font-weight:400;margin-top:12px;transform:rotate(.45deg);line-height:1.58}
 .card-salary-signal{
   margin:16px 0 14px;
   padding:14px 14px 12px;
@@ -209,95 +216,39 @@ th,td{padding:13px 14px;text-align:left;border-bottom:1px solid #ece5d8;font-siz
   background:rgba(255,255,255,.72);
   border:1px solid var(--line);
 }
-.salary-signal-title{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:12px;
-}
-.salary-signal-title b{
-  font-family:Oswald,sans-serif;
-  color:var(--violet);
-  text-transform:uppercase;
-  letter-spacing:.06em;
-}
-.salary-signal-title span{
-  font-size:.68rem;
-  text-transform:uppercase;
-  color:var(--gray);
-  font-weight:900;
-}
-.card-salary-row{
-  display:grid;
-  grid-template-columns:74px 1fr 78px;
-  gap:10px;
-  align-items:center;
-  margin:7px 0;
-}
-.card-salary-year{
-  font-family:Oswald,sans-serif;
-  color:var(--violet);
-  font-size:.88rem;
-}
+.salary-signal-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.salary-signal-title b{font-family:Oswald,sans-serif;color:var(--navy);text-transform:uppercase;letter-spacing:.06em}
+.salary-signal-title span{font-size:.68rem;text-transform:uppercase;color:var(--gray);font-weight:900}
+.card-salary-row{display:grid;grid-template-columns:74px 1fr 78px;gap:10px;align-items:center;margin:7px 0}
+.card-salary-year{font-family:Oswald,sans-serif;color:var(--navy);font-size:.88rem}
 .card-bar-stack{display:grid;gap:5px}
-.card-bar-line{
-  display:grid;
-  grid-template-columns:52px 1fr;
-  gap:8px;
-  align-items:center;
-}
-.card-bar-line small{
-  color:#5a6070;
-  font-size:.65rem;
-  text-transform:uppercase;
-  font-weight:900;
-}
-.card-bar-rail{
-  height:10px;
-  background:#ECEFF4;
-  border-radius:999px;
-  overflow:hidden;
-}
-.card-bar-rail i{
-  height:100%;
-  display:block;
-  border-radius:999px;
-}
+.card-bar-line{display:grid;grid-template-columns:52px 1fr;gap:8px;align-items:center}
+.card-bar-line small{color:#5a6070;font-size:.65rem;text-transform:uppercase;font-weight:900}
+.card-bar-rail{height:10px;background:#ECEFF4;border-radius:999px;overflow:hidden}
+.card-bar-rail i{height:100%;display:block;border-radius:999px}
 .card-bar-rail .target{background:linear-gradient(90deg,var(--violet-2),var(--violet))}
 .card-bar-rail .comp{background:linear-gradient(90deg,var(--steel),var(--blue))}
-.card-gap-pill{
-  justify-self:end;
-  border-radius:999px;
-  padding:6px 8px;
-  font-family:Inter,monospace;
-  font-size:.68rem;
-  font-weight:900;
-  text-align:center;
-  white-space:nowrap;
-}
+.card-gap-pill{justify-self:end;border-radius:999px;padding:6px 8px;font-family:Inter,monospace;font-size:.68rem;font-weight:900;text-align:center;white-space:nowrap}
 .card-gap-pill.neg{background:#EAF2F6;color:var(--blue);border:1px solid rgba(91,154,169,.35)}
 .card-gap-pill.pos{background:#FFF0EA;color:var(--coral);border:1px solid rgba(232,141,103,.45)}
-
-
-.profile-extras{display:grid;grid-template-columns:220px 1fr;gap:14px;align-items:center;margin:16px 0 18px}
-.radar-block{background:rgba(255,255,255,.70);border:1px solid var(--line);border-radius:18px;padding:12px 10px 8px;min-width:0}
-.radar-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 4px 2px}
-.radar-title b{font-family:Oswald,sans-serif;text-transform:uppercase;color:var(--violet);letter-spacing:.06em;font-size:.9rem}
-.radar-title span{font-size:.61rem;text-transform:uppercase;color:var(--gray);font-weight:900;text-align:right}
-.radar-svg{width:100%;height:auto;display:block;overflow:visible}
+.profile-extras{display:grid;grid-template-columns:minmax(0,0.95fr) minmax(260px,1.05fr);gap:18px;margin:18px 0 16px;align-items:stretch}
+.radar-block{background:rgba(255,255,255,.70);border:1px solid var(--line);border-radius:18px;padding:16px 14px 12px;min-width:0;height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.radar-title{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:0 4px 8px}
+.radar-title b{font-family:Oswald,sans-serif;text-transform:uppercase;color:#1B2A41;letter-spacing:.07em;font-size:1.28rem;line-height:1.05}
+.radar-title span{font-size:.63rem;text-transform:uppercase;color:#4E5D73;font-weight:900;text-align:right;line-height:1.35;padding-top:4px;max-width:150px}
+.radar-svg{width:100%;height:auto;display:block;overflow:visible;max-height:245px;margin:auto}
 .radar-ring{fill:none;stroke:#D9E1EC;stroke-width:1}
 .radar-axis{stroke:#C8D0DE;stroke-width:1}
-.radar-poly{fill:rgba(126,126,184,.28);stroke:var(--violet);stroke-width:2.5;transition:filter .2s ease, opacity .2s ease}
-.radar-point{fill:var(--violet);stroke:#fff;stroke-width:1.5;cursor:pointer}
+.radar-poly{fill:rgba(216,154,24,.22);stroke:var(--pct-gold-dark);stroke-width:2.5;transition:filter .2s ease, opacity .2s ease}
+.radar-point{fill:var(--pct-gold-dark);stroke:#fff;stroke-width:1.5;cursor:pointer}
 .radar-label{font-family:Montserrat,sans-serif;font-size:8.5px;font-weight:800;fill:#66758D;letter-spacing:.02em}
 .radar-poly:hover,.radar-point:hover{filter:drop-shadow(0 3px 6px rgba(36,49,67,.25));opacity:.92}
-.scalability-card{background:linear-gradient(135deg,rgba(236,235,250,.74),rgba(255,253,248,.92));border:1px solid rgba(126,126,184,.30);border-radius:18px;padding:15px;box-shadow:0 8px 18px rgba(36,49,67,.06);cursor:default}
-.scalability-score{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:7px}
-.scalability-score span{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;font-weight:900;color:var(--gray)}
-.scalability-score b{font-family:Inter,monospace;font-size:1.35rem;color:var(--violet)}
-.scalability-meta{font-size:.82rem;line-height:1.45;color:#3F4857;margin-bottom:8px}
-.scalability-card p{font-size:.8rem;line-height:1.55;margin:0;color:#4f4c58}
+.scalability-card{background:linear-gradient(135deg,rgba(236,235,250,.74),rgba(255,253,248,.92));border:1px solid rgba(126,126,184,.30);border-radius:18px;padding:22px 24px;box-shadow:0 8px 18px rgba(36,49,67,.06);cursor:default;height:100%;display:flex;flex-direction:column;justify-content:center;align-self:stretch;margin-top:0}
+.scalability-score{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+.scalability-score span{font-size:.82rem;text-transform:uppercase;letter-spacing:.14em;font-weight:900;color:#1B2A41;padding-top:8px}
+.scalability-score b{font-family:Inter,monospace;font-size:1.8rem;color:#1B2A41;line-height:1}
+.scalability-meta{font-size:1rem;line-height:1.42;color:#3F4857;margin-bottom:14px}
+.scalability-card p{font-size:.92rem;line-height:1.6;margin:0;color:#4f4c58}
 .scalability-section .panel{overflow:visible}
 .scatter-wrap{background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:22px;padding:16px;position:relative}
 .scatter-svg{width:100%;height:auto;display:block;overflow:visible}
@@ -310,94 +261,24 @@ th,td{padding:13px 14px;text-align:left;border-bottom:1px solid #ece5d8;font-siz
 .axis-title{font-family:Montserrat,sans-serif;font-size:12px;font-weight:900;fill:#243143}.axis-tick{font-family:Inter,monospace;font-size:11px;fill:#66758D}
 .tooltip{position:fixed;z-index:9999;background:#243143;color:#fff;border-radius:10px;padding:9px 11px;font-size:.78rem;line-height:1.35;box-shadow:0 10px 24px rgba(36,49,67,.24);pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .12s ease,transform .12s ease;max-width:260px}
 .tooltip.show{opacity:1;transform:translateY(0)}
-
-.cap-heatmap{
-  display:grid;
-  gap:10px;
-  margin-top:18px;
-}
-.cap-row{
-  display:grid;
-  grid-template-columns:1.15fr repeat(3, minmax(120px, .9fr));
-  gap:10px;
-  align-items:stretch;
-}
-.cap-head .cap-cell{
-  background:#F6F2EA;
-  border-color:var(--line);
-  color:var(--violet);
-  font-family:Oswald,sans-serif;
-  text-transform:uppercase;
-  letter-spacing:.05em;
-  font-size:.86rem;
-}
-.cap-cell{
-  border:1px solid rgba(222,214,199,.95);
-  border-radius:16px;
-  min-height:76px;
-  padding:12px 13px;
-  background:rgba(255,255,255,.78);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  box-shadow:0 5px 14px rgba(36,49,67,.055);
-}
-.cap-player b{
-  display:block;
-  font-family:Oswald,sans-serif;
-  color:var(--ink);
-  text-transform:uppercase;
-  font-size:1.05rem;
-}
-.cap-player span{
-  color:var(--gray);
-  font-size:.74rem;
-  font-weight:800;
-  text-transform:uppercase;
-  margin-top:4px;
-}
-.cap-cell .value{
-  font-family:Inter,monospace;
-  font-size:1.28rem;
-  font-weight:900;
-}
-.cap-cell .label{
-  margin-top:5px;
-  color:#3F4857;
-  font-size:.72rem;
-  font-weight:800;
-  text-transform:uppercase;
-  line-height:1.25;
-}
+.cap-heatmap{display:grid;gap:10px;margin-top:18px}
+.cap-row{display:grid;grid-template-columns:1.15fr repeat(3,minmax(120px,.9fr));gap:10px;align-items:stretch}
+.cap-head .cap-cell{background:#F6F2EA;border-color:var(--line);color:var(--navy);font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.86rem}
+.cap-cell{border:1px solid rgba(222,214,199,.95);border-radius:16px;min-height:76px;padding:12px 13px;background:rgba(255,255,255,.78);display:flex;flex-direction:column;justify-content:center;box-shadow:0 5px 14px rgba(36,49,67,.055)}
+.cap-player b{display:block;font-family:Oswald,sans-serif;color:var(--ink);text-transform:uppercase;font-size:1.05rem}
+.cap-player span{color:var(--gray);font-size:.74rem;font-weight:800;text-transform:uppercase;margin-top:4px}
+.cap-cell .value{font-family:Inter,monospace;font-size:1.28rem;font-weight:900}
+.cap-cell .label{margin-top:5px;color:#3F4857;font-size:.72rem;font-weight:800;text-transform:uppercase;line-height:1.25}
 .heat-low{background:linear-gradient(135deg,#EAF3F6,#F8FBFD);color:#3B7F91;border-color:rgba(91,154,169,.32)}
 .heat-mid{background:linear-gradient(135deg,#F6EBD8,#FFFDF8);color:#8D6537;border-color:rgba(212,165,116,.42)}
-.heat-high{background:linear-gradient(135deg,#ECEBFA,#F9F8FF);color:var(--violet);border-color:rgba(126,126,184,.42)}
+.heat-high{background:linear-gradient(135deg,#ECEBFA,#F9F8FF);color:var(--navy);border-color:rgba(126,126,184,.42)}
 .heat-under-strong{background:linear-gradient(135deg,#DDECF2,#F7FBFD);color:#2F6F82;border-color:rgba(91,154,169,.48)}
 .heat-under{background:linear-gradient(135deg,#EAF3F6,#FFFFFF);color:#3B7F91;border-color:rgba(91,154,169,.32)}
 .heat-over{background:linear-gradient(135deg,#FFF0EA,#FFFDFC);color:var(--coral);border-color:rgba(232,141,103,.50)}
-.cap-heatmap-note{
-  margin-top:16px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-.cap-heatmap-note .mini-note{
-  background:rgba(255,255,255,.70);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:13px 14px;
-  line-height:1.5;
-  color:#4f4c58;
-  font-size:.9rem;
-}
-.cap-heatmap-note b{color:var(--violet)}
-@media(max-width:800px){
-  .cap-row{grid-template-columns:1fr}
-  .cap-head{display:none}
-  .cap-heatmap-note{grid-template-columns:1fr}
-}
-
-
+.cap-heatmap-note{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cap-heatmap-note .mini-note{background:rgba(255,255,255,.70);border:1px solid var(--line);border-radius:16px;padding:13px 14px;line-height:1.5;color:#4f4c58;font-size:.9rem}
+.cap-heatmap-note b{color:var(--navy)}
+@media(max-width:800px){.cap-row{grid-template-columns:1fr}.cap-head{display:none}.cap-heatmap-note{grid-template-columns:1fr}}
 [data-tip]:focus-visible,
 .mock-badge:focus-visible,
 .radar-point:focus-visible,
@@ -407,7 +288,6 @@ details summary:focus-visible {
   outline:3px solid rgba(91,154,169,.75);
   outline-offset:4px;
 }
-
 @media(max-width:700px){
   .scatter-label{font-size:10px}
   .quad-label{font-size:11px}
@@ -415,8 +295,7 @@ details summary:focus-visible {
   .scatter-wrap{overflow-x:auto}
   .scatter-svg{min-width:620px}
 }
-
-@media(max-width:900px){.profile-extras{grid-template-columns:1fr}.radar-block{max-width:260px;margin:0 auto}.scatter-wrap{padding:8px}}
+@media(max-width:900px){.profile-extras{grid-template-columns:1fr}.radar-block{max-width:320px;margin:0 auto}.scalability-card{justify-content:flex-start}.scatter-wrap{padding:8px}}
 
 @media(max-width:1000px){.badge-row{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.hero,.grid-2,.player-grid,.method-content{grid-template-columns:1fr}.card-top{grid-template-columns:70px 1fr}.accuracy-badge{grid-column:1/-1}.chart-row{grid-template-columns:1fr}.chart-value{text-align:right}.signal-grid{grid-template-columns:1fr}}
@@ -465,6 +344,7 @@ details summary:focus-visible {
       <h3>Two tests, one story</h3>
       <p><b>Cleaner validation:</b> 2024 stats → 2025 salary. This is the cleanest test of the original undervalued call.</p>
       <p><b>Market reset check:</b> 2025 stats → 2026 salary. Useful, but interpreted as contextual because 2026 salary conditions changed dramatically.</p>
+      <p><b>Visual rule:</b> percentile-based skill reads use a gold scale; market/value signals use blue, violet, sand, and coral. That keeps skill strength separate from salary interpretation.</p>
     </div>
   </section>
 
@@ -504,38 +384,27 @@ details summary:focus-visible {
           <div class="track"><span class="fill" style="width:36.0%"></span></div>
         </div>
       </div>
-<div class="profile-extras">
-      <div class="radar-block">
-        <div class="radar-title"><b>Radar profile</b><span>Position percentiles + scalability score</span></div>
-        <svg class="radar-svg" viewBox="-8 -8 236 236" role="img" aria-label="Leonie Fiebich radar profile"><title>Leonie Fiebich radar profile: position percentiles plus scalability confidence</title>
-          <polygon points="110.0,86.0 125.6,95.0 125.6,113.0 110.0,122.0 94.4,113.0 94.4,95.0" class="radar-ring" /><polygon points="110.0,68.0 141.2,86.0 141.2,122.0 110.0,140.0 78.8,122.0 78.8,86.0" class="radar-ring" /><polygon points="110.0,50.0 156.8,77.0 156.8,131.0 110.0,158.0 63.2,131.0 63.2,77.0" class="radar-ring" /><polygon points="110.0,32.0 172.4,68.0 172.4,140.0 110.0,176.0 47.6,140.0 47.6,68.0" class="radar-ring" /><line x1="110" y1="104" x2="110.0" y2="32.0" class="radar-axis" /><line x1="110" y1="104" x2="172.4" y2="68.0" class="radar-axis" /><line x1="110" y1="104" x2="172.4" y2="140.0" class="radar-axis" /><line x1="110" y1="104" x2="110.0" y2="176.0" class="radar-axis" /><line x1="110" y1="104" x2="47.6" y2="140.0" class="radar-axis" /><line x1="110" y1="104" x2="47.6" y2="68.0" class="radar-axis" />
-          <polygon points="110.0,33.9 135.2,89.4 132.5,117.0 110.0,109.7 60.1,132.8 75.1,83.8" class="radar-poly" data-tip="Leonie Fiebich radar profile" tabindex="0" />
-          <circle class="radar-point" cx="110.0" cy="33.9" r="3.6" data-tip="Leonie Fiebich<br>TS%: 97th percentile 👑" tabindex="0" /><circle class="radar-point" cx="135.2" cy="89.4" r="3.6" data-tip="Leonie Fiebich<br>Steals: 40th percentile" tabindex="0" /><circle class="radar-point" cx="132.5" cy="117.0" r="3.6" data-tip="Leonie Fiebich<br>Blocks: 36th percentile" tabindex="0" /><circle class="radar-point" cx="110.0" cy="109.7" r="3.6" data-tip="Leonie Fiebich<br>Rebounds: 8th percentile" tabindex="0" /><circle class="radar-point" cx="60.1" cy="132.8" r="3.6" data-tip="Leonie Fiebich<br>On/Off: 80th percentile" tabindex="0" /><circle class="radar-point" cx="75.1" cy="83.8" r="3.6" data-tip="Leonie Fiebich<br>Scalability confidence: 56%" tabindex="0" />
-          <text x="110.0" y="5.0" text-anchor="middle" dy="4" class="radar-label">TS%</text><text x="195.7" y="54.5" text-anchor="start" dy="4" class="radar-label">Steals</text><text x="195.7" y="153.5" text-anchor="start" dy="4" class="radar-label">Blocks</text><text x="110.0" y="203.0" text-anchor="middle" dy="4" class="radar-label">Rebounds</text><text x="24.3" y="153.5" text-anchor="end" dy="4" class="radar-label">On/Off</text><text x="24.3" y="54.5" text-anchor="end" dy="4" class="radar-label">Scalability</text>
-        </svg>
+      <div class="profile-extras">
+        <div class="radar-block">
+          <div class="radar-title"><b>Radar profile</b><span>Position percentiles + scalability score</span></div>
+          <svg class="radar-svg" viewBox="-8 -8 236 236" role="img" aria-label="Leonie Fiebich radar profile"><title>Leonie Fiebich radar profile: position percentiles plus scalability confidence</title>
+            <circle cx="110" cy="110" r="80" class="radar-ring"/><circle cx="110" cy="110" r="60" class="radar-ring"/><circle cx="110" cy="110" r="40" class="radar-ring"/><circle cx="110" cy="110" r="20" class="radar-ring"/>
+            <line x1="110" y1="110" x2="110.0" y2="30.0" class="radar-axis"/><line x1="110" y1="110" x2="179.3" y2="70.0" class="radar-axis"/><line x1="110" y1="110" x2="179.3" y2="150.0" class="radar-axis"/><line x1="110" y1="110" x2="110.0" y2="190.0" class="radar-axis"/><line x1="110" y1="110" x2="40.7" y2="150.0" class="radar-axis"/><line x1="110" y1="110" x2="40.7" y2="70.0" class="radar-axis"/>
+            <text x="110" y="18" text-anchor="middle" class="radar-label">TS%</text><text x="190" y="66" text-anchor="start" class="radar-label">Steals</text><text x="190" y="154" text-anchor="start" class="radar-label">Blocks</text><text x="110" y="207" text-anchor="middle" class="radar-label">Rebounds</text><text x="30" y="154" text-anchor="end" class="radar-label">On/Off</text><text x="30" y="66" text-anchor="end" class="radar-label">Scalability</text>
+            <polygon points="110.0,33.9 135.2,89.4 132.5,117.0 110.0,109.7 60.1,132.8 75.1,83.8" class="radar-poly" data-tip="Leonie Fiebich radar profile" tabindex="0" />
+            <circle class="radar-point" cx="110.0" cy="33.9" r="3.6" data-tip="Leonie Fiebich<br>TS%: 97th percentile 👑" tabindex="0" /><circle class="radar-point" cx="135.2" cy="89.4" r="3.6" data-tip="Leonie Fiebich<br>Steals: 40th percentile" tabindex="0" /><circle class="radar-point" cx="132.5" cy="117.0" r="3.6" data-tip="Leonie Fiebich<br>Blocks: 36th percentile" tabindex="0" /><circle class="radar-point" cx="110.0" cy="109.7" r="3.6" data-tip="Leonie Fiebich<br>Rebounds: 8th percentile" tabindex="0" /><circle class="radar-point" cx="60.1" cy="132.8" r="3.6" data-tip="Leonie Fiebich<br>On/Off: 80th percentile" tabindex="0" /><circle class="radar-point" cx="75.1" cy="83.8" r="3.6" data-tip="Leonie Fiebich<br>Scalability confidence: 56%" tabindex="0" />
+          </svg>
+        </div>
+        <div class="scalability-card" data-tip="Scalability score: 5.6/10<br>Confidence: 56%<br>Evidence: 2025 Playoffs" tabindex="0">
+          <div class="scalability-score"><span>Scalability</span><b>5.6/10</b></div>
+          <div class="scalability-meta"><b>56%</b> confidence · <b>Moderate</b><br>2025 Playoffs</div>
+          <p>Efficiency-to-usage clears the primary bar; shot diet is scalable, with midrange share as the key risk flag.</p>
+        </div>
       </div>
-      <div class="scalability-card" data-tip="Scalability score: 5.6/10<br>Confidence: 56%<br>Evidence: 2025 Playoffs" tabindex="0">
-        <div class="scalability-score"><span>Scalability</span><b>5.6/10</b></div>
-        <div class="scalability-meta"><strong>Moderate • 56%</strong><br>2025 Playoffs evidence • small on/off sample</div>
-        <p>Scalable efficiency flag: elite TS% at low-usage wing volume; playoff evidence keeps the confidence moderate.</p>
-      </div></div>
-<div class="card-salary-signal">
+      <div class="card-salary-signal">
         <div class="salary-signal-title"><b>Salary signal</b><span>Target vs median comp</span></div>
-        <div class="card-salary-row">
-            <div class="card-salary-year">2025</div>
-            <div class="card-bar-stack">
-              <div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:49.9%"></i></div></div>
-              <div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:100.0%"></i></div></div>
-            </div>
-            <div class="card-gap-pill neg">-$69K<br>-50.1%</div>
-          </div><div class="card-salary-row">
-            <div class="card-salary-year">2026</div>
-            <div class="card-bar-stack">
-              <div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:28.9%"></i></div></div>
-              <div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:100.0%"></i></div></div>
-            </div>
-            <div class="card-gap-pill neg">-$721K<br>-71.1%</div>
-          </div>
+        <div class="card-salary-row"><div class="card-salary-year">2025</div><div class="card-bar-stack"><div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:49.9%"></i></div></div><div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:100%"></i></div></div></div><div class="card-gap-pill neg">-$69K<br>-50.1%</div></div>
+        <div class="card-salary-row"><div class="card-salary-year">2026</div><div class="card-bar-stack"><div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:28.9%"></i></div></div><div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:100%"></i></div></div></div><div class="card-gap-pill neg">-$721K<br>-71.1%</div></div>
       </div>
       <div class="player-signal-badges">
         <div class="mock-badge underpay" tabindex="0"><div class="mock-icon">⌄⌄</div><div><b>2025: Significant underpay</b><span>Strong value edge</span></div></div>
@@ -576,38 +445,27 @@ details summary:focus-visible {
           <div class="track"><span class="fill" style="width:69.5%"></span></div>
         </div>
       </div>
-<div class="profile-extras">
-      <div class="radar-block">
-        <div class="radar-title"><b>Radar profile</b><span>Position percentiles + scalability score</span></div>
-        <svg class="radar-svg" viewBox="-8 -8 236 236" role="img" aria-label="Emily Engstler radar profile"><title>Emily Engstler radar profile: position percentiles plus scalability confidence</title>
-          <polygon points="110.0,86.0 125.6,95.0 125.6,113.0 110.0,122.0 94.4,113.0 94.4,95.0" class="radar-ring" /><polygon points="110.0,68.0 141.2,86.0 141.2,122.0 110.0,140.0 78.8,122.0 78.8,86.0" class="radar-ring" /><polygon points="110.0,50.0 156.8,77.0 156.8,131.0 110.0,158.0 63.2,131.0 63.2,77.0" class="radar-ring" /><polygon points="110.0,32.0 172.4,68.0 172.4,140.0 110.0,176.0 47.6,140.0 47.6,68.0" class="radar-ring" /><line x1="110" y1="104" x2="110.0" y2="32.0" class="radar-axis" /><line x1="110" y1="104" x2="172.4" y2="68.0" class="radar-axis" /><line x1="110" y1="104" x2="172.4" y2="140.0" class="radar-axis" /><line x1="110" y1="104" x2="110.0" y2="176.0" class="radar-axis" /><line x1="110" y1="104" x2="47.6" y2="140.0" class="radar-axis" /><line x1="110" y1="104" x2="47.6" y2="68.0" class="radar-axis" />
-          <polygon points="110.0,85.0 165.9,71.7 165.9,136.3 110.0,154.1 81.3,120.6 67.0,79.2" class="radar-poly" data-tip="Emily Engstler radar profile" tabindex="0" />
-          <circle class="radar-point" cx="110.0" cy="85.0" r="3.6" data-tip="Emily Engstler<br>TS%: 26th percentile" tabindex="0" /><circle class="radar-point" cx="165.9" cy="71.7" r="3.6" data-tip="Emily Engstler<br>Steals: 90th percentile" tabindex="0" /><circle class="radar-point" cx="165.9" cy="136.3" r="3.6" data-tip="Emily Engstler<br>Blocks: 90th percentile" tabindex="0" /><circle class="radar-point" cx="110.0" cy="154.1" r="3.6" data-tip="Emily Engstler<br>Rebounds: 70th percentile" tabindex="0" /><circle class="radar-point" cx="81.3" cy="120.6" r="3.6" data-tip="Emily Engstler<br>On/Off: 46th percentile" tabindex="0" /><circle class="radar-point" cx="67.0" cy="79.2" r="3.6" data-tip="Emily Engstler<br>Scalability confidence: 69%" tabindex="0" />
-          <text x="110.0" y="5.0" text-anchor="middle" dy="4" class="radar-label">TS%</text><text x="195.7" y="54.5" text-anchor="start" dy="4" class="radar-label">Steals</text><text x="195.7" y="153.5" text-anchor="start" dy="4" class="radar-label">Blocks</text><text x="110.0" y="203.0" text-anchor="middle" dy="4" class="radar-label">Rebounds</text><text x="24.3" y="153.5" text-anchor="end" dy="4" class="radar-label">On/Off</text><text x="24.3" y="54.5" text-anchor="end" dy="4" class="radar-label">Scalability</text>
-        </svg>
+      <div class="profile-extras">
+        <div class="radar-block">
+          <div class="radar-title"><b>Radar profile</b><span>Position percentiles + scalability score</span></div>
+          <svg class="radar-svg" viewBox="-8 -8 236 236" role="img" aria-label="Emily Engstler radar profile"><title>Emily Engstler radar profile: position percentiles plus scalability confidence</title>
+            <circle cx="110" cy="110" r="80" class="radar-ring"/><circle cx="110" cy="110" r="60" class="radar-ring"/><circle cx="110" cy="110" r="40" class="radar-ring"/><circle cx="110" cy="110" r="20" class="radar-ring"/>
+            <line x1="110" y1="110" x2="110.0" y2="30.0" class="radar-axis"/><line x1="110" y1="110" x2="179.3" y2="70.0" class="radar-axis"/><line x1="110" y1="110" x2="179.3" y2="150.0" class="radar-axis"/><line x1="110" y1="110" x2="110.0" y2="190.0" class="radar-axis"/><line x1="110" y1="110" x2="40.7" y2="150.0" class="radar-axis"/><line x1="110" y1="110" x2="40.7" y2="70.0" class="radar-axis"/>
+            <text x="110" y="18" text-anchor="middle" class="radar-label">TS%</text><text x="190" y="66" text-anchor="start" class="radar-label">Steals</text><text x="190" y="154" text-anchor="start" class="radar-label">Blocks</text><text x="110" y="207" text-anchor="middle" class="radar-label">Rebounds</text><text x="30" y="154" text-anchor="end" class="radar-label">On/Off</text><text x="30" y="66" text-anchor="end" class="radar-label">Scalability</text>
+            <polygon points="110.0,85.0 165.9,71.7 165.9,136.3 110.0,154.1 81.3,120.6 67.0,79.2" class="radar-poly" data-tip="Emily Engstler radar profile" tabindex="0" />
+            <circle class="radar-point" cx="110.0" cy="85.0" r="3.6" data-tip="Emily Engstler<br>TS%: 26th percentile" tabindex="0" /><circle class="radar-point" cx="165.9" cy="71.7" r="3.6" data-tip="Emily Engstler<br>Steals: 90th percentile" tabindex="0" /><circle class="radar-point" cx="165.9" cy="136.3" r="3.6" data-tip="Emily Engstler<br>Blocks: 90th percentile" tabindex="0" /><circle class="radar-point" cx="110.0" cy="154.1" r="3.6" data-tip="Emily Engstler<br>Rebounds: 70th percentile" tabindex="0" /><circle class="radar-point" cx="81.3" cy="120.6" r="3.6" data-tip="Emily Engstler<br>On/Off: 46th percentile" tabindex="0" /><circle class="radar-point" cx="67.0" cy="79.2" r="3.6" data-tip="Emily Engstler<br>Scalability confidence: 69%" tabindex="0" />
+          </svg>
+        </div>
+        <div class="scalability-card" data-tip="Scalability score: 6.9/10<br>Confidence: 69%<br>Evidence: 2025 Regular Season" tabindex="0">
+          <div class="scalability-score"><span>Scalability</span><b>6.9/10</b></div>
+          <div class="scalability-meta"><b>69%</b> confidence · <b>Good</b><br>2025 Regular Season</div>
+          <p>Shot diet and rim deterrence keep the profile scalable; midrange share is the main role-expansion risk flag.</p>
+        </div>
       </div>
-      <div class="scalability-card" data-tip="Scalability score: 6.9/10<br>Confidence: 69%<br>Evidence: 2025 Regular Season" tabindex="0">
-        <div class="scalability-score"><span>Scalability</span><b>6.9/10</b></div>
-        <div class="scalability-meta"><strong>Good • 69%</strong><br>2025 Regular Season evidence • large on/off sample</div>
-        <p>Scalability comes through defensive versatility: stocks, rebounding, and playmaking travel even when scoring efficiency dips.</p>
-      </div></div>
-<div class="card-salary-signal">
+      <div class="card-salary-signal">
         <div class="salary-signal-title"><b>Salary signal</b><span>Target vs median comp</span></div>
-        <div class="card-salary-row">
-            <div class="card-salary-year">2025</div>
-            <div class="card-bar-stack">
-              <div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:60.9%"></i></div></div>
-              <div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:100.0%"></i></div></div>
-            </div>
-            <div class="card-gap-pill neg">-$52K<br>-39.1%</div>
-          </div><div class="card-salary-row">
-            <div class="card-salary-year">2026</div>
-            <div class="card-bar-stack">
-              <div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:72.3%"></i></div></div>
-              <div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:100.0%"></i></div></div>
-            </div>
-            <div class="card-gap-pill neg">-$107K<br>-27.7%</div>
-          </div>
+        <div class="card-salary-row"><div class="card-salary-year">2025</div><div class="card-bar-stack"><div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:61.0%"></i></div></div><div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:100%"></i></div></div></div><div class="card-gap-pill neg">-$52K<br>-39.1%</div></div>
+        <div class="card-salary-row"><div class="card-salary-year">2026</div><div class="card-bar-stack"><div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:72.3%"></i></div></div><div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:100%"></i></div></div></div><div class="card-gap-pill neg">-$107K<br>-27.7%</div></div>
       </div>
       <div class="player-signal-badges">
         <div class="mock-badge underpay" tabindex="0"><div class="mock-icon">⌄⌄</div><div><b>2025: Significant underpay</b><span>Strong value edge</span></div></div>
@@ -648,38 +506,27 @@ details summary:focus-visible {
           <div class="track"><span class="fill" style="width:49.6%"></span></div>
         </div>
       </div>
-<div class="profile-extras">
-      <div class="radar-block">
-        <div class="radar-title"><b>Radar profile</b><span>Position percentiles + scalability score</span></div>
-        <svg class="radar-svg" viewBox="-8 -8 236 236" role="img" aria-label="Naz Hillmon radar profile"><title>Naz Hillmon radar profile: position percentiles plus scalability confidence</title>
-          <polygon points="110.0,86.0 125.6,95.0 125.6,113.0 110.0,122.0 94.4,113.0 94.4,95.0" class="radar-ring" /><polygon points="110.0,68.0 141.2,86.0 141.2,122.0 110.0,140.0 78.8,122.0 78.8,86.0" class="radar-ring" /><polygon points="110.0,50.0 156.8,77.0 156.8,131.0 110.0,158.0 63.2,131.0 63.2,77.0" class="radar-ring" /><polygon points="110.0,32.0 172.4,68.0 172.4,140.0 110.0,176.0 47.6,140.0 47.6,68.0" class="radar-ring" /><line x1="110" y1="104" x2="110.0" y2="32.0" class="radar-axis" /><line x1="110" y1="104" x2="172.4" y2="68.0" class="radar-axis" /><line x1="110" y1="104" x2="172.4" y2="140.0" class="radar-axis" /><line x1="110" y1="104" x2="110.0" y2="176.0" class="radar-axis" /><line x1="110" y1="104" x2="47.6" y2="140.0" class="radar-axis" /><line x1="110" y1="104" x2="47.6" y2="68.0" class="radar-axis" />
-          <polygon points="110.0,49.0 116.9,100.0 140.9,121.9 110.0,149.8 50.1,138.6 55.1,72.3" class="radar-poly" data-tip="Naz Hillmon radar profile" tabindex="0" />
-          <circle class="radar-point" cx="110.0" cy="49.0" r="3.6" data-tip="Naz Hillmon<br>TS%: 76th percentile" tabindex="0" /><circle class="radar-point" cx="116.9" cy="100.0" r="3.6" data-tip="Naz Hillmon<br>Steals: 11th percentile" tabindex="0" /><circle class="radar-point" cx="140.9" cy="121.9" r="3.6" data-tip="Naz Hillmon<br>Blocks: 50th percentile" tabindex="0" /><circle class="radar-point" cx="110.0" cy="149.8" r="3.6" data-tip="Naz Hillmon<br>Rebounds: 64th percentile" tabindex="0" /><circle class="radar-point" cx="50.1" cy="138.6" r="3.6" data-tip="Naz Hillmon<br>On/Off: 96th percentile 👑" tabindex="0" /><circle class="radar-point" cx="55.1" cy="72.3" r="3.6" data-tip="Naz Hillmon<br>Scalability confidence: 88%" tabindex="0" />
-          <text x="110.0" y="5.0" text-anchor="middle" dy="4" class="radar-label">TS%</text><text x="195.7" y="54.5" text-anchor="start" dy="4" class="radar-label">Steals</text><text x="195.7" y="153.5" text-anchor="start" dy="4" class="radar-label">Blocks</text><text x="110.0" y="203.0" text-anchor="middle" dy="4" class="radar-label">Rebounds</text><text x="24.3" y="153.5" text-anchor="end" dy="4" class="radar-label">On/Off</text><text x="24.3" y="54.5" text-anchor="end" dy="4" class="radar-label">Scalability</text>
-        </svg>
+      <div class="profile-extras">
+        <div class="radar-block">
+          <div class="radar-title"><b>Radar profile</b><span>Position percentiles + scalability score</span></div>
+          <svg class="radar-svg" viewBox="-8 -8 236 236" role="img" aria-label="Naz Hillmon radar profile"><title>Naz Hillmon radar profile: position percentiles plus scalability confidence</title>
+            <circle cx="110" cy="110" r="80" class="radar-ring"/><circle cx="110" cy="110" r="60" class="radar-ring"/><circle cx="110" cy="110" r="40" class="radar-ring"/><circle cx="110" cy="110" r="20" class="radar-ring"/>
+            <line x1="110" y1="110" x2="110.0" y2="30.0" class="radar-axis"/><line x1="110" y1="110" x2="179.3" y2="70.0" class="radar-axis"/><line x1="110" y1="110" x2="179.3" y2="150.0" class="radar-axis"/><line x1="110" y1="110" x2="110.0" y2="190.0" class="radar-axis"/><line x1="110" y1="110" x2="40.7" y2="150.0" class="radar-axis"/><line x1="110" y1="110" x2="40.7" y2="70.0" class="radar-axis"/>
+            <text x="110" y="18" text-anchor="middle" class="radar-label">TS%</text><text x="190" y="66" text-anchor="start" class="radar-label">Steals</text><text x="190" y="154" text-anchor="start" class="radar-label">Blocks</text><text x="110" y="207" text-anchor="middle" class="radar-label">Rebounds</text><text x="30" y="154" text-anchor="end" class="radar-label">On/Off</text><text x="30" y="66" text-anchor="end" class="radar-label">Scalability</text>
+            <polygon points="110.0,49.0 116.9,100.0 140.9,121.9 110.0,149.8 50.1,138.6 55.1,72.3" class="radar-poly" data-tip="Naz Hillmon radar profile" tabindex="0" />
+            <circle class="radar-point" cx="110.0" cy="49.0" r="3.6" data-tip="Naz Hillmon<br>TS%: 76th percentile" tabindex="0" /><circle class="radar-point" cx="116.9" cy="100.0" r="3.6" data-tip="Naz Hillmon<br>Steals: 11th percentile" tabindex="0" /><circle class="radar-point" cx="140.9" cy="121.9" r="3.6" data-tip="Naz Hillmon<br>Blocks: 50th percentile" tabindex="0" /><circle class="radar-point" cx="110.0" cy="149.8" r="3.6" data-tip="Naz Hillmon<br>Rebounds: 64th percentile" tabindex="0" /><circle class="radar-point" cx="50.1" cy="138.6" r="3.6" data-tip="Naz Hillmon<br>On/Off: 96th percentile 👑" tabindex="0" /><circle class="radar-point" cx="55.1" cy="72.3" r="3.6" data-tip="Naz Hillmon<br>Scalability confidence: 88%" tabindex="0" />
+          </svg>
+        </div>
+        <div class="scalability-card" data-tip="Scalability score: 8.8/10<br>Confidence: 88%<br>Evidence: 2025 Regular Season" tabindex="0">
+          <div class="scalability-score"><span>Scalability</span><b>8.8/10</b></div>
+          <div class="scalability-meta"><b>88%</b> confidence · <b>High</b><br>2025 Regular Season</div>
+          <p>Efficiency-to-usage clears the primary bar; shot diet is highly scalable, with consistency comps still unvalidated.</p>
+        </div>
       </div>
-      <div class="scalability-card" data-tip="Scalability score: 8.8/10<br>Confidence: 88%<br>Evidence: 2025 Regular Season" tabindex="0">
-        <div class="scalability-score"><span>Scalability</span><b>8.8/10</b></div>
-        <div class="scalability-meta"><strong>High • 88%</strong><br>2025 Regular Season evidence • large on/off sample</div>
-        <p>High-confidence scalability: stronger role, strong efficiency-to-usage balance, and elite team impact signal.</p>
-      </div></div>
-<div class="card-salary-signal">
+      <div class="card-salary-signal">
         <div class="salary-signal-title"><b>Salary signal</b><span>Target vs median comp</span></div>
-        <div class="card-salary-row">
-            <div class="card-salary-year">2025</div>
-            <div class="card-bar-stack">
-              <div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:84.6%"></i></div></div>
-              <div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:100.0%"></i></div></div>
-            </div>
-            <div class="card-gap-pill neg">-$15K<br>-15.4%</div>
-          </div><div class="card-salary-row">
-            <div class="card-salary-year">2026</div>
-            <div class="card-bar-stack">
-              <div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:76.7%"></i></div></div>
-              <div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:100.0%"></i></div></div>
-            </div>
-            <div class="card-gap-pill neg">-$255K<br>-23.3%</div>
-          </div>
+        <div class="card-salary-row"><div class="card-salary-year">2025</div><div class="card-bar-stack"><div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:84.6%"></i></div></div><div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:100%"></i></div></div></div><div class="card-gap-pill neg">-$15K<br>-15.4%</div></div>
+        <div class="card-salary-row"><div class="card-salary-year">2026</div><div class="card-bar-stack"><div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:76.7%"></i></div></div><div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:100%"></i></div></div></div><div class="card-gap-pill neg">-$255K<br>-23.3%</div></div>
       </div>
       <div class="player-signal-badges">
         <div class="mock-badge market" tabindex="0"><div class="mock-icon">=</div><div><b>2025: Mild underpay</b><span>Nearer to comps</span></div></div>
@@ -720,38 +567,27 @@ details summary:focus-visible {
           <div class="track"><span class="fill" style="width:35.2%"></span></div>
         </div>
       </div>
-<div class="profile-extras">
-      <div class="radar-block">
-        <div class="radar-title"><b>Radar profile</b><span>Position percentiles + scalability score</span></div>
-        <svg class="radar-svg" viewBox="-8 -8 236 236" role="img" aria-label="Nyara Sabally radar profile"><title>Nyara Sabally radar profile: position percentiles plus scalability confidence</title>
-          <polygon points="110.0,86.0 125.6,95.0 125.6,113.0 110.0,122.0 94.4,113.0 94.4,95.0" class="radar-ring" /><polygon points="110.0,68.0 141.2,86.0 141.2,122.0 110.0,140.0 78.8,122.0 78.8,86.0" class="radar-ring" /><polygon points="110.0,50.0 156.8,77.0 156.8,131.0 110.0,158.0 63.2,131.0 63.2,77.0" class="radar-ring" /><polygon points="110.0,32.0 172.4,68.0 172.4,140.0 110.0,176.0 47.6,140.0 47.6,68.0" class="radar-ring" /><line x1="110" y1="104" x2="110.0" y2="32.0" class="radar-axis" /><line x1="110" y1="104" x2="172.4" y2="68.0" class="radar-axis" /><line x1="110" y1="104" x2="172.4" y2="140.0" class="radar-axis" /><line x1="110" y1="104" x2="110.0" y2="176.0" class="radar-axis" /><line x1="110" y1="104" x2="47.6" y2="140.0" class="radar-axis" /><line x1="110" y1="104" x2="47.6" y2="68.0" class="radar-axis" />
-          <polygon points="110.0,80.0 144.0,84.4 161.8,133.9 110.0,145.1 66.6,129.1 82.6,88.2" class="radar-poly" data-tip="Nyara Sabally radar profile" tabindex="0" />
-          <circle class="radar-point" cx="110.0" cy="80.0" r="3.6" data-tip="Nyara Sabally<br>TS%: 33rd percentile" tabindex="0" /><circle class="radar-point" cx="144.0" cy="84.4" r="3.6" data-tip="Nyara Sabally<br>Steals: 55th percentile" tabindex="0" /><circle class="radar-point" cx="161.8" cy="133.9" r="3.6" data-tip="Nyara Sabally<br>Blocks: 83rd percentile" tabindex="0" /><circle class="radar-point" cx="110.0" cy="145.1" r="3.6" data-tip="Nyara Sabally<br>Rebounds: 57th percentile" tabindex="0" /><circle class="radar-point" cx="66.6" cy="129.1" r="3.6" data-tip="Nyara Sabally<br>On/Off: 70th percentile" tabindex="0" /><circle class="radar-point" cx="82.6" cy="88.2" r="3.6" data-tip="Nyara Sabally<br>Scalability confidence: 44%" tabindex="0" />
-          <text x="110.0" y="5.0" text-anchor="middle" dy="4" class="radar-label">TS%</text><text x="195.7" y="54.5" text-anchor="start" dy="4" class="radar-label">Steals</text><text x="195.7" y="153.5" text-anchor="start" dy="4" class="radar-label">Blocks</text><text x="110.0" y="203.0" text-anchor="middle" dy="4" class="radar-label">Rebounds</text><text x="24.3" y="153.5" text-anchor="end" dy="4" class="radar-label">On/Off</text><text x="24.3" y="54.5" text-anchor="end" dy="4" class="radar-label">Scalability</text>
-        </svg>
+      <div class="profile-extras">
+        <div class="radar-block">
+          <div class="radar-title"><b>Radar profile</b><span>Position percentiles + scalability score</span></div>
+          <svg class="radar-svg" viewBox="-8 -8 236 236" role="img" aria-label="Nyara Sabally radar profile"><title>Nyara Sabally radar profile: position percentiles plus scalability confidence</title>
+            <circle cx="110" cy="110" r="80" class="radar-ring"/><circle cx="110" cy="110" r="60" class="radar-ring"/><circle cx="110" cy="110" r="40" class="radar-ring"/><circle cx="110" cy="110" r="20" class="radar-ring"/>
+            <line x1="110" y1="110" x2="110.0" y2="30.0" class="radar-axis"/><line x1="110" y1="110" x2="179.3" y2="70.0" class="radar-axis"/><line x1="110" y1="110" x2="179.3" y2="150.0" class="radar-axis"/><line x1="110" y1="110" x2="110.0" y2="190.0" class="radar-axis"/><line x1="110" y1="110" x2="40.7" y2="150.0" class="radar-axis"/><line x1="110" y1="110" x2="40.7" y2="70.0" class="radar-axis"/>
+            <text x="110" y="18" text-anchor="middle" class="radar-label">TS%</text><text x="190" y="66" text-anchor="start" class="radar-label">Steals</text><text x="190" y="154" text-anchor="start" class="radar-label">Blocks</text><text x="110" y="207" text-anchor="middle" class="radar-label">Rebounds</text><text x="30" y="154" text-anchor="end" class="radar-label">On/Off</text><text x="30" y="66" text-anchor="end" class="radar-label">Scalability</text>
+            <polygon points="110.0,80.0 144.0,84.4 161.8,133.9 110.0,145.1 66.6,129.1 82.6,88.2" class="radar-poly" data-tip="Nyara Sabally radar profile" tabindex="0" />
+            <circle class="radar-point" cx="110.0" cy="80.0" r="3.6" data-tip="Nyara Sabally<br>TS%: 33rd percentile" tabindex="0" /><circle class="radar-point" cx="144.0" cy="84.4" r="3.6" data-tip="Nyara Sabally<br>Steals: 55th percentile" tabindex="0" /><circle class="radar-point" cx="161.8" cy="133.9" r="3.6" data-tip="Nyara Sabally<br>Blocks: 83rd percentile" tabindex="0" /><circle class="radar-point" cx="110.0" cy="145.1" r="3.6" data-tip="Nyara Sabally<br>Rebounds: 57th percentile" tabindex="0" /><circle class="radar-point" cx="66.6" cy="129.1" r="3.6" data-tip="Nyara Sabally<br>On/Off: 70th percentile" tabindex="0" /><circle class="radar-point" cx="82.6" cy="88.2" r="3.6" data-tip="Nyara Sabally<br>Scalability confidence: 44%" tabindex="0" />
+          </svg>
+        </div>
+        <div class="scalability-card" data-tip="Scalability score: 4.4/10<br>Confidence: 44%<br>Evidence: 2024 Regular Season" tabindex="0">
+          <div class="scalability-score"><span>Scalability</span><b>4.4/10</b></div>
+          <div class="scalability-meta"><b>44%</b> confidence · <b>Moderate</b><br>2024 Regular Season</div>
+          <p>Limited positive scalability signals in the current rubric; prior-season fallback and midrange share keep the read cautious.</p>
+        </div>
       </div>
-      <div class="scalability-card" data-tip="Scalability score: 4.4/10<br>Confidence: 44%<br>Evidence: 2024 Regular Season" tabindex="0">
-        <div class="scalability-score"><span>Scalability</span><b>4.4/10</b></div>
-        <div class="scalability-meta"><strong>Moderate • 44%</strong><br>2024 Regular Season evidence • large on/off sample</div>
-        <p>Scalability is still possible through rim protection, but the current refresh needs a stronger 2026 check-in.</p>
-      </div></div>
-<div class="card-salary-signal">
+      <div class="card-salary-signal">
         <div class="salary-signal-title"><b>Salary signal</b><span>Target vs median comp</span></div>
-        <div class="card-salary-row">
-            <div class="card-salary-year">2025</div>
-            <div class="card-bar-stack">
-              <div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:81.3%"></i></div></div>
-              <div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:100.0%"></i></div></div>
-            </div>
-            <div class="card-gap-pill neg">-$18K<br>-18.7%</div>
-          </div><div class="card-salary-row">
-            <div class="card-salary-year">2026</div>
-            <div class="card-bar-stack">
-              <div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:100.0%"></i></div></div>
-              <div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:77.7%"></i></div></div>
-            </div>
-            <div class="card-gap-pill pos">+$97K<br>+28.7%</div>
-          </div>
+        <div class="card-salary-row"><div class="card-salary-year">2025</div><div class="card-bar-stack"><div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:81.3%"></i></div></div><div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:100%"></i></div></div></div><div class="card-gap-pill neg">-$18K<br>-18.7%</div></div>
+        <div class="card-salary-row"><div class="card-salary-year">2026</div><div class="card-bar-stack"><div class="card-bar-line"><small>Target</small><div class="card-bar-rail"><i class="target" style="width:100%"></i></div></div><div class="card-bar-line"><small>Comp</small><div class="card-bar-rail"><i class="comp" style="width:77.7%"></i></div></div></div><div class="card-gap-pill pos">+$97K<br>+28.7%</div></div>
       </div>
       <div class="player-signal-badges">
         <div class="mock-badge clear" tabindex="0"><div class="mock-icon">⌄</div><div><b>2025: Clear underpay</b><span>Original signal supported</span></div></div>
@@ -761,76 +597,19 @@ details summary:focus-visible {
     </article></div>
   </section>
 
-
-    <section class="section scalability-section">
-      <div class="section-head"><span class="num">3</span><h2>Scalability quadrant</h2></div>
-      <div class="panel">
-        <p>Scalability uses the refresh layer’s confidence score and usage context. It is a directional read: who has room to scale, and who needs a stronger 2026 check-in before the value claim gets louder.</p>
-        <div class="scatter-wrap">
-          <svg class="scatter-svg" viewBox="0 0 640 420" role="img" aria-label="Scalability by usage rate scatterplot"><title>Scalability by usage rate scatterplot</title>
-            <rect x="70" y="40" width="375.0" height="134.4" fill="rgba(133,176,154,.17)" />
-            <rect x="445.0" y="40" width="125.0" height="134.4" fill="rgba(108,154,195,.13)" />
-            <rect x="70" y="174.4" width="375.0" height="185.6" fill="rgba(255,255,255,.42)" />
-            <rect x="445.0" y="174.4" width="125.0" height="185.6" fill="rgba(232,141,103,.10)" />
-            <text class="axis-tick" x="70.0" y="385" text-anchor="middle">0%</text><line class="scatter-grid" x1="70.0" y1="40" x2="70.0" y2="360" /><text class="axis-tick" x="195.0" y="385" text-anchor="middle">6%</text><line class="scatter-grid" x1="195.0" y1="40" x2="195.0" y2="360" /><text class="axis-tick" x="320.0" y="385" text-anchor="middle">12%</text><line class="scatter-grid" x1="320.0" y1="40" x2="320.0" y2="360" /><text class="axis-tick" x="445.0" y="385" text-anchor="middle">18%</text><line class="scatter-grid" x1="445.0" y1="40" x2="445.0" y2="360" /><text class="axis-tick" x="570.0" y="385" text-anchor="middle">24%</text><line class="scatter-grid" x1="570.0" y1="40" x2="570.0" y2="360" /><text class="axis-tick" x="55" y="364.0" text-anchor="end">0%</text><line class="scatter-grid" x1="70" y1="360.0" x2="570" y2="360.0" /><text class="axis-tick" x="55" y="284.0" text-anchor="end">25%</text><line class="scatter-grid" x1="70" y1="280.0" x2="570" y2="280.0" /><text class="axis-tick" x="55" y="204.0" text-anchor="end">50%</text><line class="scatter-grid" x1="70" y1="200.0" x2="570" y2="200.0" /><text class="axis-tick" x="55" y="124.0" text-anchor="end">75%</text><line class="scatter-grid" x1="70" y1="120.0" x2="570" y2="120.0" /><text class="axis-tick" x="55" y="44.0" text-anchor="end">100%</text><line class="scatter-grid" x1="70" y1="40.0" x2="570" y2="40.0" />
-            <line class="scatter-threshold" x1="445.0" y1="40" x2="445.0" y2="360" />
-            <line class="scatter-threshold" x1="70" y1="174.4" x2="570" y2="174.4" />
-            <line class="scatter-axis" x1="70" y1="360" x2="570" y2="360" />
-            <line class="scatter-axis" x1="70" y1="40" x2="70" y2="360" />
-            <text class="quad-label high" x="82" y="62">* High scalability</text>
-            <text class="quad-label proven" x="438" y="62">Proven volume</text>
-            <text class="quad-label" x="82" y="338">Limited role</text>
-            <text class="quad-label risk" x="414" y="338">Volume inefficient</text>
-            <circle class="scatter-point" cx="342.9" cy="180.8" r="8" fill="#5D5C9C" data-tip="Leonie Fiebich&lt;br&gt;Usage: 13.1%&lt;br&gt;Scalability confidence: 56%&lt;br&gt;Rating: Moderate&lt;br&gt;Evidence: 2025 Playoffs" tabindex="0" /><text class="scatter-label" x="349.9" y="169.8">Fiebich</text><circle class="scatter-point" cx="413.5" cy="139.2" r="8" fill="#5B9AA9" data-tip="Emily Engstler&lt;br&gt;Usage: 16.5%&lt;br&gt;Scalability confidence: 69%&lt;br&gt;Rating: Good&lt;br&gt;Evidence: 2025 Regular Season" tabindex="0" /><text class="scatter-label" x="420.5" y="125.2">Engstler</text><circle class="scatter-point" cx="389.2" cy="78.4" r="8" fill="#2F7D54" data-tip="Naz Hillmon&lt;br&gt;Usage: 15.3%&lt;br&gt;Scalability confidence: 88%&lt;br&gt;Rating: High&lt;br&gt;Evidence: 2025 Regular Season" tabindex="0" /><text class="scatter-label" x="396.2" y="66.4">Hillmon</text><circle class="scatter-point" cx="386.9" cy="219.2" r="8" fill="#E88D67" data-tip="Nyara Sabally&lt;br&gt;Usage: 15.2%&lt;br&gt;Scalability confidence: 44%&lt;br&gt;Rating: Moderate&lt;br&gt;Evidence: 2024 Regular Season" tabindex="0" /><text class="scatter-label" x="393.9" y="237.2">Sabally</text>
-            <text class="axis-title" x="320" y="413" text-anchor="middle">Usage Rate %</text>
-            <text class="axis-title" transform="translate(18 205) rotate(-90)" text-anchor="middle">Scalability Confidence %</text>
-          </svg>
-        </div>
-      </div>
-    </section>
-    
-
   <section class="section cap-share-section">
     <div class="section-head"><span class="num">4</span><h2>Cap Share Check: Who Still Costs Less Than Their Comp Market?</h2></div>
     <div class="panel">
       <p>Because 2026 salaries reset under a new market structure, cap share gives a cleaner read than raw salary alone. The heat map below keeps the key question simple: <b>is the player being paid like the comp market around them?</b></p>
       <div class="coach-note small">Fiebich remains the clearest value gap after normalization: her 2026 salary uses about 4.2% of the cap, while her median comp group sits around 14.5%.</div>
       <div class="cap-heatmap" role="table" aria-label="2026 cap share heat map comparing target salary share to median comparable player salary share">
-        <div class="cap-row cap-head" role="row">
-          <div class="cap-cell" role="columnheader">Player</div>
-          <div class="cap-cell" role="columnheader">Target Cap Share</div>
-          <div class="cap-cell" role="columnheader">Median Comp Cap Share</div>
-          <div class="cap-cell" role="columnheader">Market Gap</div>
-        </div>
-        <div class="cap-row" role="row">
-          <div class="cap-cell cap-player" role="cell"><b>Leonie Fiebich</b><span>Strong hit</span></div>
-          <div class="cap-cell heat-low" role="cell"><span class="value">4.2%</span><span class="label">Low target cost</span></div>
-          <div class="cap-cell heat-high" role="cell"><span class="value">14.5%</span><span class="label">High comp market</span></div>
-          <div class="cap-cell heat-under-strong" role="cell" data-tip="Fiebich cap-share gap: -10.3 percentage points vs median comps" tabindex="0"><span class="value">-10.3 pts</span><span class="label">Major underpay</span></div>
-        </div>
-        <div class="cap-row" role="row">
-          <div class="cap-cell cap-player" role="cell"><b>Emily Engstler</b><span>Versatility value</span></div>
-          <div class="cap-cell heat-low" role="cell"><span class="value">4%</span><span class="label">Low target cost</span></div>
-          <div class="cap-cell heat-low" role="cell"><span class="value">5.5%</span><span class="label">Low/mid comp market</span></div>
-          <div class="cap-cell heat-under" role="cell" data-tip="Engstler cap-share gap: -1.5 percentage points vs median comps" tabindex="0"><span class="value">-1.5 pts</span><span class="label">Still below comps</span></div>
-        </div>
-        <div class="cap-row" role="row">
-          <div class="cap-cell cap-player" role="cell"><b>Naz Hillmon</b><span>Market-corrected hit</span></div>
-          <div class="cap-cell heat-high" role="cell"><span class="value">12%</span><span class="label">Higher target cost</span></div>
-          <div class="cap-cell heat-high" role="cell"><span class="value">15.6%</span><span class="label">High comp market</span></div>
-          <div class="cap-cell heat-under" role="cell" data-tip="Hillmon cap-share gap: -3.6 percentage points vs median comps" tabindex="0"><span class="value">-3.6 pts</span><span class="label">Closer, still below</span></div>
-        </div>
-        <div class="cap-row" role="row">
-          <div class="cap-cell cap-player" role="cell"><b>Nyara Sabally</b><span>Mixed case</span></div>
-          <div class="cap-cell heat-mid" role="cell"><span class="value">6.2%</span><span class="label">Mid target cost</span></div>
-          <div class="cap-cell heat-low" role="cell"><span class="value">4.9%</span><span class="label">Lower comp market</span></div>
-          <div class="cap-cell heat-over" role="cell" data-tip="Sabally cap-share gap: +1.4 percentage points vs median comps" tabindex="0"><span class="value">+1.4 pts</span><span class="label">Above median comps</span></div>
-        </div>
+        <div class="cap-row cap-head" role="row"><div class="cap-cell" role="columnheader">Player</div><div class="cap-cell" role="columnheader">Target Cap Share</div><div class="cap-cell" role="columnheader">Median Comp Cap Share</div><div class="cap-cell" role="columnheader">Market Gap</div></div>
+        <div class="cap-row" role="row"><div class="cap-cell cap-player" role="cell"><b>Leonie Fiebich</b><span>Strong hit</span></div><div class="cap-cell heat-low" role="cell"><span class="value">4.2%</span><span class="label">Low target cost</span></div><div class="cap-cell heat-high" role="cell"><span class="value">14.5%</span><span class="label">High comp market</span></div><div class="cap-cell heat-under-strong" role="cell" data-tip="Fiebich cap-share gap: -10.3 percentage points vs median comps" tabindex="0"><span class="value">-10.3 pts</span><span class="label">Major underpay</span></div></div>
+        <div class="cap-row" role="row"><div class="cap-cell cap-player" role="cell"><b>Emily Engstler</b><span>Versatility value</span></div><div class="cap-cell heat-low" role="cell"><span class="value">4%</span><span class="label">Low target cost</span></div><div class="cap-cell heat-low" role="cell"><span class="value">5.5%</span><span class="label">Low/mid comp market</span></div><div class="cap-cell heat-under" role="cell" data-tip="Engstler cap-share gap: -1.5 percentage points vs median comps" tabindex="0"><span class="value">-1.5 pts</span><span class="label">Still below comps</span></div></div>
+        <div class="cap-row" role="row"><div class="cap-cell cap-player" role="cell"><b>Naz Hillmon</b><span>Market-corrected hit</span></div><div class="cap-cell heat-high" role="cell"><span class="value">12%</span><span class="label">Higher target cost</span></div><div class="cap-cell heat-high" role="cell"><span class="value">15.6%</span><span class="label">High comp market</span></div><div class="cap-cell heat-under" role="cell" data-tip="Hillmon cap-share gap: -3.6 percentage points vs median comps" tabindex="0"><span class="value">-3.6 pts</span><span class="label">Closer, still below</span></div></div>
+        <div class="cap-row" role="row"><div class="cap-cell cap-player" role="cell"><b>Nyara Sabally</b><span>Mixed case</span></div><div class="cap-cell heat-mid" role="cell"><span class="value">6.2%</span><span class="label">Mid target cost</span></div><div class="cap-cell heat-low" role="cell"><span class="value">4.9%</span><span class="label">Lower comp market</span></div><div class="cap-cell heat-over" role="cell" data-tip="Sabally cap-share gap: +1.4 percentage points vs median comps" tabindex="0"><span class="value">+1.4 pts</span><span class="label">Above median comps</span></div></div>
       </div>
-      <div class="cap-heatmap-note">
-        <div class="mini-note"><b>How to read it:</b> blue/teal gaps show players still costing less than their comp market. Coral means the salary gap has flipped above median comps.</div>
-        <div class="mini-note"><b>Why it matters:</b> this keeps the 2026 CBA jump from drowning the signal. We are comparing market share, not just bigger raw salaries.</div>
-      </div>
+      <div class="cap-heatmap-note"><div class="mini-note"><b>How to read it:</b> blue/teal gaps show players still costing less than their comp market. Coral means the salary gap has flipped above median comps.</div><div class="mini-note"><b>Why it matters:</b> this keeps the 2026 CBA jump from drowning the signal. We are comparing market share, not just bigger raw salaries.</div></div>
     </div>
   </section>
 
@@ -840,22 +619,22 @@ details summary:focus-visible {
       <p>Negative bars mean the target player made less than the median of selected comparable players.</p>
       <div class="chart"><div class="chart-row">
           <div class="chart-label">Leonie Fiebich</div>
-          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar negative" style="--w:49.22%"></span></div>
+          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar negative" style="--w:49.22%" data-tip="Leonie Fiebich 2025 gap: -$68,905 vs median comps" tabindex="0"></span></div>
           <div class="chart-value negative">-$68,905</div>
         </div>
 <div class="chart-row">
           <div class="chart-label">Emily Engstler</div>
-          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar negative" style="--w:37.11%"></span></div>
+          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar negative" style="--w:37.12%" data-tip="Emily Engstler 2025 gap: -$51,961 vs median comps" tabindex="0"></span></div>
           <div class="chart-value negative">-$51,961</div>
         </div>
 <div class="chart-row">
           <div class="chart-label">Naz Hillmon</div>
-          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar negative" style="--w:10.48%"></span></div>
+          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar negative" style="--w:10.48%" data-tip="Naz Hillmon 2025 gap: -$14,671 vs median comps" tabindex="0"></span></div>
           <div class="chart-value negative">-$14,671</div>
         </div>
 <div class="chart-row">
           <div class="chart-label">Nyara Sabally</div>
-          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar negative" style="--w:13.18%"></span></div>
+          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar negative" style="--w:13.18%" data-tip="Nyara Sabally 2025 gap: -$18,452 vs median comps" tabindex="0"></span></div>
           <div class="chart-value negative">-$18,452</div>
         </div></div>
     </div>
@@ -865,24 +644,55 @@ details summary:focus-visible {
       <div class="coach-note small">Don’t overfit the chaos year. Use 2026 as a market signal, not a courtroom verdict.</div>
       <div class="chart"><div class="chart-row">
           <div class="chart-label">Leonie Fiebich</div>
-          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar negative" style="--w:48.10%"></span></div>
+          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar negative" style="--w:48.10%" data-tip="Leonie Fiebich 2026 gap: -$721,490 vs median comps" tabindex="0"></span></div>
           <div class="chart-value negative">-$721,490</div>
         </div>
 <div class="chart-row">
           <div class="chart-label">Emily Engstler</div>
-          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar negative" style="--w:7.10%"></span></div>
+          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar negative" style="--w:7.10%" data-tip="Emily Engstler 2026 gap: -$106,521 vs median comps" tabindex="0"></span></div>
           <div class="chart-value negative">-$106,521</div>
         </div>
 <div class="chart-row">
           <div class="chart-label">Naz Hillmon</div>
-          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar negative" style="--w:17.00%"></span></div>
+          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar negative" style="--w:17.00%" data-tip="Naz Hillmon 2026 gap: -$255,000 vs median comps" tabindex="0"></span></div>
           <div class="chart-value negative">-$255,000</div>
         </div>
 <div class="chart-row">
           <div class="chart-label">Nyara Sabally</div>
-          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar positive" style="--w:6.49%"></span></div>
+          <div class="axis-wrap"><span class="zero"></span><span class="gap-bar positive" style="--w:6.49%" data-tip="Nyara Sabally 2026 gap: +$97,386 vs median comps" tabindex="0"></span></div>
           <div class="chart-value positive">$97,386</div>
         </div></div>
+    </div>
+  </section>
+
+  <section class="section grid-2 scalability-section">
+    <div class="panel">
+      <h3>Scalability quadrant</h3>
+      <p>Scalability confidence is plotted against usage rate. This layer helps separate efficient low-usage value from role-expanded proof.</p>
+      <div class="scatter-wrap">
+        <svg class="scatter-svg" viewBox="0 0 640 420" role="img" aria-label="Scalability by usage rate scatterplot"><title>Scalability by usage rate scatterplot</title>
+          <rect x="70" y="40" width="500" height="300" fill="#F8FAFD" rx="6"/>
+          <rect x="70" y="40" width="250" height="126" fill="rgba(47,125,84,.10)"/><rect x="320" y="40" width="250" height="126" fill="rgba(108,154,195,.13)"/><rect x="70" y="166" width="250" height="174" fill="rgba(112,120,135,.07)"/><rect x="320" y="166" width="250" height="174" fill="rgba(232,141,103,.09)"/>
+          <line x1="70" y1="340" x2="570" y2="340" class="scatter-axis"/><line x1="70" y1="40" x2="70" y2="340" class="scatter-axis"/>
+          <line x1="320" y1="40" x2="320" y2="340" class="scatter-threshold"/><line x1="70" y1="166" x2="570" y2="166" class="scatter-threshold"/>
+          <text x="85" y="58" class="quad-label high">↑ High scalability</text><text x="448" y="58" class="quad-label proven">Proven volume</text><text x="85" y="320" class="quad-label">Limited role</text><text x="420" y="320" class="quad-label risk">Volume inefficient</text>
+          <text x="320" y="388" text-anchor="middle" class="axis-title">Usage Rate %</text><text x="22" y="190" transform="rotate(-90 22 190)" text-anchor="middle" class="axis-title">Scalability Confidence</text>
+          <text x="70" y="358" text-anchor="middle" class="axis-tick">0%</text><text x="195" y="358" text-anchor="middle" class="axis-tick">10%</text><text x="320" y="358" text-anchor="middle" class="axis-tick">20%</text><text x="445" y="358" text-anchor="middle" class="axis-tick">30%</text><text x="570" y="358" text-anchor="middle" class="axis-tick">40%</text>
+          <text x="50" y="344" text-anchor="end" class="axis-tick">0%</text><text x="50" y="294" text-anchor="end" class="axis-tick">15%</text><text x="50" y="244" text-anchor="end" class="axis-tick">30%</text><text x="50" y="194" text-anchor="end" class="axis-tick">45%</text><text x="50" y="144" text-anchor="end" class="axis-tick">60%</text><text x="50" y="94" text-anchor="end" class="axis-tick">75%</text><text x="50" y="44" text-anchor="end" class="axis-tick">90%</text>
+          <circle class="scatter-point" cx="342.9" cy="180.8" r="8" fill="#5D5C9C" data-tip="Leonie Fiebich&lt;br&gt;Usage: 13.1%&lt;br&gt;Scalability confidence: 56%&lt;br&gt;Rating: Moderate&lt;br&gt;Evidence: 2025 Playoffs" tabindex="0" /><text x="352.9" y="174.8" class="scatter-label">Fiebich</text>
+<circle class="scatter-point" cx="261.5" cy="48.2" r="8" fill="#5D5C9C" data-tip="Naz Hillmon&lt;br&gt;Usage: 15.3%&lt;br&gt;Scalability confidence: 88%&lt;br&gt;Rating: High&lt;br&gt;Evidence: 2025 Regular Season" tabindex="0" /><text x="171.5" y="42.2" class="scatter-label">Hillmon</text>
+<circle class="scatter-point" cx="343.9" cy="137.5" r="8" fill="#5D5C9C" data-tip="Emily Engstler&lt;br&gt;Usage: 19.1%&lt;br&gt;Scalability confidence: 69%&lt;br&gt;Rating: Good&lt;br&gt;Evidence: 2025 Regular Season" tabindex="0" /><text x="353.9" y="131.5" class="scatter-label">Engstler</text>
+<circle class="scatter-point" cx="318.5" cy="203.3" r="8" fill="#E88D67" data-tip="Nyara Sabally&lt;br&gt;Usage: 19.9%&lt;br&gt;Scalability confidence: 44%&lt;br&gt;Rating: Moderate&lt;br&gt;Evidence: 2024 Regular Season" tabindex="0" /><text x="328.5" y="197.3" class="scatter-label">Sabally</text>
+        </svg>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Scalability reads</h3>
+      <table>
+        <thead><tr><th>Player</th><th>Score</th><th>Confidence</th><th>Evidence lane</th></tr></thead>
+        <tbody><tr><td>Leonie Fiebich</td><td>5.6/10</td><td>56%</td><td>2025 Playoffs</td></tr><tr><td>Emily Engstler</td><td>6.9/10</td><td>69%</td><td>2025 Regular Season</td></tr><tr><td>Naz Hillmon</td><td>8.8/10</td><td>88%</td><td>2025 Regular Season</td></tr><tr><td>Nyara Sabally</td><td>4.4/10</td><td>44%</td><td>2024 Regular Season</td></tr></tbody>
+      </table>
+      <div class="coach-note small">Scalability is the bridge between “good in current role” and “can carry more without losing value.”</div>
     </div>
   </section>
 
@@ -898,10 +708,9 @@ details summary:focus-visible {
       <div class="mini-head"><b>2026</b><span class="gap-pill neg">-$721,490 (-71.1%)</span></div>
       <div class="bar-line"><span>Target</span><div class="rail"><i class="target" style="width:28.9%"></i></div><strong>$293,510</strong></div>
       <div class="bar-line"><span>Median comp</span><div class="rail"><i class="comp" style="width:100.0%"></i></div><strong>$1,015,000</strong></div>
-    </div>
-<div class="mini-gap">
+    </div><div class="mini-gap">
       <div class="mini-head"><b>2025</b><span class="gap-pill neg">-$51,961 (-39.1%)</span></div>
-      <div class="bar-line"><span>Target</span><div class="rail"><i class="target" style="width:60.9%"></i></div><strong>$81,079</strong></div>
+      <div class="bar-line"><span>Target</span><div class="rail"><i class="target" style="width:61.0%"></i></div><strong>$81,079</strong></div>
       <div class="bar-line"><span>Median comp</span><div class="rail"><i class="comp" style="width:100.0%"></i></div><strong>$133,040</strong></div>
     </div><div class="mini-gap">
       <div class="mini-head"><b>2026</b><span class="gap-pill neg">-$106,521 (-27.7%)</span></div>
