@@ -1,17 +1,20 @@
-# Validation Summary: Project Title
+# Validation Summary: WNBA Undervalued Contract Retrospective
 
-- Run at: 2026-05-23T18:27:46.100157+00:00
-- Status: warning
+- Run at: 2026-05-24T02:04:41.553246+00:00
+- Status: pass
 
 ## Files Checked
 
 | File | Status | Rows | Columns | Duplicate Rows |
 |---|---|---:|---:|---:|
-| data/processed/example.csv | missing | 0 | 0 | 0 |
+| data/processed/top5_undervalued_panel.csv | validated | 13 | 587 | 0 |
+| data/processed/wnba_2026_contract_status.csv | validated | 875 | 36 | 0 |
+| data/processed/wnba_2024_2026_salary_bridge.csv | validated | 468 | 16 | 0 |
+| data/processed/wnba_2026_team_cap_table.csv | validated | 15 | 21 | 0 |
 
 ## Warnings
 
-- data/processed/example.csv is missing
+- None
 
 ## Errors
 

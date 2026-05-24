@@ -1,4 +1,4 @@
-# Validation Report: Project Title
+# Validation Report: WNBA Undervalued Contract Retrospective
 
 ## Validation Status
 
@@ -10,10 +10,10 @@ python scripts/validate_data.py
 
 ## Planned Validation Checks
 
-- Row count check
-- Missing value check
-- Duplicate check
-- Schema check
+- Expected file presence check
+- CSV row and column count check
+- Duplicate row check
+- Missing value summary
 
 ## Latest Validation Summary
 

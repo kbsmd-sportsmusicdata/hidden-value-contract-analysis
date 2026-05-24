@@ -1,4 +1,4 @@
-# Publishing Checklist: Project Title
+# Publishing Checklist: WNBA Undervalued Contract Retrospective
 
 ## Pre-Publish Checks
 

@@ -1,68 +1,63 @@
-# Project Title
+# WNBA Undervalued Contract Retrospective
 
-**Short project subtitle**
+**A decision-support notebook reassessing five originally undervalued WNBA contracts through 2023-2025 production, 2026 salary context, and scalability signals.**
 
-One-paragraph project description.
-
-## How To Use This Template
-
-1. Copy this template into a new repo for your project.
-2. Update `project_config.yml` with your project metadata and links.
-3. Replace `notebooks/index.html` with your final HTML notebook or dashboard export.
-4. Optionally add small datasets to `data/processed/` and list them under `data.expected_files`.
-5. Run the setup and checks:
-
-```bash
-python scripts/init_project.py
-python scripts/validate_data.py
-python scripts/publish_check.py
-```
+This project revisits a five-player undervalued contract cohort to test which cases still hold up once the original hidden-value lens is reframed against 2026 salary levels, comparable-player context, and role-scalability evidence. The repo is intentionally slim: the notebook is the main public deliverable, and the supporting CSVs act as evidence tables rather than a full reproducibility dump.
 
 ## Live Project
 
-- HTML Notebook: 
-- Portfolio Page: 
-- Tableau Public: 
+- HTML Notebook: GitHub Pages link pending deployment
+- Portfolio Page:
+- Tableau Public:
 
 ## Project Status
 
-draft
+`in-progress`
 
 ## Why This Project Matters
 
-Add project problem statement.
+The original undervalued-contract case was useful as a snapshot, but front offices need to know which value signals survive once the market catches up. This retrospective separates players who still look underpriced from players whose salaries have corrected, using current comp context, on-court impact, and scalability evidence in one decision-support frame.
 
 ## Key Questions
 
-- What question does this project answer?
-- What decision does this analysis support?
+- Which originally flagged undervalued players still grade as salary surplus in the 2026 market?
+- Which players show scalable hidden value even when market pricing has corrected?
+- Which cases now read as fair market, corrected, or higher-risk bets?
 
 ## Audience
 
-- sports analytics portfolio reviewers
-- front office decision-makers
-- coaching staff
+- WNBA front office decision-makers
+- Salary cap and roster strategy staff
+- Sports analytics portfolio reviewers
 
 ## Project Outputs
 
-- Primary deliverable: HTML notebook
-- Notebook path: `notebooks/index.html`
-- Report path: `docs/executive_summary.md`
+- Primary deliverable: `notebooks/index.html`
+- Executive summary: `docs/executive_summary.md`
+- Methodology: `docs/methodology.md`
+- Data dictionary: `docs/data_dictionary.md`
+- Validation output: `reports/validation_summary.md`
 
-## Data Sources
+## Supporting Evidence Tables
 
-- Source Name
+- `data/processed/top5_undervalued_panel.csv`: Five-player retrospective panel with value, trend, and scalability fields.
+- `data/processed/wnba_2026_contract_status.csv`: Contract-year status and roster-control context.
+- `data/processed/wnba_2024_2026_salary_bridge.csv`: Salary bridge linking recent performance context to 2026 contract framing.
+- `data/processed/wnba_2026_team_cap_table.csv`: Team-level cap structure context.
+
+## Headline Findings
+
+- Leonie Fiebich remains the clearest retained surplus case in the refreshed group, pairing elite efficiency with a salary that still sits below the modeled expectation and comparable-player frame.
+- Naz Hillmon and Jordan Horston still show strong hidden-value and scalability signals, but their 2026 salary context reads closer to market-corrected than clear bargain territory.
+- Emily Engstler and Nyara Sabally remain useful cases, but the refreshed evidence pushes them toward more mixed or risk-adjusted interpretations than the original undervalued framing suggested.
+
 ## Methodology Summary
 
-See [`docs/methodology.md`](docs/methodology.md).
+The retrospective uses a rules-based framework rather than a predictive model. It combines salary discount, comparable-player pricing, true shooting efficiency, on/off impact, hidden-value tags, and a source-backed scalability rubric. When the preferred season snapshot is unavailable, evidence precedence falls back in this order: same-season regular season, same-season playoffs, prior-season regular season, prior-season playoffs.
 
 ## Validation Summary
 
-See [`docs/validation_report.md`](docs/validation_report.md).
-
-## Data Dictionary
-
-See [`docs/data_dictionary.md`](docs/data_dictionary.md).
+Validation checks file presence, CSV row and column counts, duplicate rows, and missing-value patterns for the four shipped evidence tables. See `reports/validation_summary.md` for the latest generated output.
 
 ## Repo Structure
 
@@ -80,11 +75,13 @@ See [`docs/data_dictionary.md`](docs/data_dictionary.md).
 
 ```bash
 pip install -r requirements.txt
-python scripts/generate_docs.py
+python scripts/init_project.py
 python scripts/validate_data.py
-python scripts/generate_readme.py
+python scripts/publish_check.py
 ```
 
 ## Next Steps
 
-- List next step.
+- Backfill the live GitHub Pages URL into `project_config.yml` after deployment.
+- Add lightweight branch protection after the first successful private deployment.
+- Expand the repo with player-level briefs only if a broader public story is needed.

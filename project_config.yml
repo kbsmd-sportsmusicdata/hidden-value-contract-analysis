@@ -1,15 +1,15 @@
 project:
-  title: "Project Title"
-  slug: "project-slug"
-  subtitle: "Short project subtitle"
-  description: "One-paragraph project description."
-  status: "draft"
+  title: "WNBA Undervalued Contract Retrospective"
+  slug: "wnba-undervalued-contract-retrospective"
+  subtitle: "A decision-support notebook reassessing five originally undervalued WNBA contracts through 2023-2025 production, 2026 salary context, and scalability signals."
+  description: "This project revisits a five-player undervalued contract cohort to test which cases still hold up once the original hidden-value lens is reframed against 2026 salary levels, comparable-player context, and role-scalability evidence."
+  status: "in-progress"
   sport: "Women's Basketball"
   league: "WNBA"
-  season: "2026"
+  season: "2023-2026"
   author: "Krystal Beasley"
-  created_date: "YYYY-MM-DD"
-  last_updated: "YYYY-MM-DD"
+  created_date: "2026-05-23"
+  last_updated: "2026-05-23"
 
 links:
   github_repo: ""
@@ -25,59 +25,98 @@ outputs:
   report_path: "docs/executive_summary.md"
 
 project_context:
-  problem_statement: "Add project problem statement."
+  problem_statement: "Front offices need a faster way to separate true contract surplus from players who only looked undervalued in a prior season snapshot. This project tests which five originally flagged cases still create value once current salary tiers, comparable-player pricing, and minutes-scalability evidence are brought into the same frame."
   audience:
+    - "WNBA front office decision-makers"
+    - "salary cap and roster strategy staff"
     - "sports analytics portfolio reviewers"
-    - "front office decision-makers"
-    - "coaching staff"
   use_cases:
-    - "player evaluation"
-    - "roster analysis"
-    - "data storytelling"
+    - "contract surplus review"
+    - "rotation value triage"
+    - "minutes scalability evaluation"
   key_questions:
-    - "What question does this project answer?"
-    - "What decision does this analysis support?"
+    - "Which originally flagged undervalued players still grade as salary surplus in the 2026 market?"
+    - "Which players show scalable hidden value even when market pricing has corrected?"
+    - "Which cases now read as fair market, corrected, or higher-risk bets?"
 
 methodology:
   data_sources:
-    - name: "Source Name"
+    - name: "Top-5 undervalued refresh panel"
       url: ""
-      notes: ""
+      notes: "Shipped in this repo as data/processed/top5_undervalued_panel.csv; preserves the five-player focus group across 2023-2025 seasons with value, trend, and scalability fields."
+    - name: "2026 contract status table"
+      url: ""
+      notes: "Shipped in this repo as data/processed/wnba_2026_contract_status.csv; used for contract-year status, salary context, and roster-control framing."
+    - name: "2024-2026 salary bridge"
+      url: ""
+      notes: "Shipped in this repo as data/processed/wnba_2024_2026_salary_bridge.csv; provides season-to-next-season salary and performance bridge fields."
+    - name: "2026 team cap table"
+      url: ""
+      notes: "Shipped in this repo as data/processed/wnba_2026_team_cap_table.csv; provides team-level cap structure context."
+    - name: "Upstream player-wide play-by-play working table"
+      url: ""
+      notes: "Referenced in methodology but intentionally not published in this slim repo; used upstream to build the refresh panel and percentile-driven basketball metrics."
   cleaning_steps:
-    - "Describe cleaning step."
+    - "Restricted the public repo to four evidence tables and excluded heavier working files, draft markdowns, and scratch artifacts."
+    - "Renamed shipped source files into portfolio-friendly processed filenames while keeping the notebook as the source-of-truth deliverable."
+    - "Dropped columns that were entirely empty from the public top-5 evidence table so validation reflects the real published slice."
+    - "Kept the five-player focus cohort aligned to 2026 contract framing even when the basketball evidence row comes from the latest supported 2023-2025 season."
   feature_engineering:
-    - "Describe derived metric or feature."
-  modeling_approach: "Describe model or write 'Not applicable'."
+    - "Compared actual 2026 salary against expected salary and comparable-player salary context."
+    - "Tracked year-over-year efficiency, on/off, and trend labels within the retained five-player cohort."
+    - "Carried forward a 10-point scalability score, confidence percentage, and supporting evidence notes to summarize upside and role portability."
+  modeling_approach: "This is a rules-based decision-support framework, not a predictive machine learning model. The retrospective combines salary discount, comparable-player pricing, true shooting efficiency, on/off impact, hidden-value tags, and a source-backed scalability rubric. Evidence precedence favors same-season regular season, then same-season playoffs, then prior-season regular season, then prior-season playoffs when the preferred season sample is unavailable."
   validation_checks:
-    - "Row count check"
-    - "Missing value check"
-    - "Duplicate check"
-    - "Schema check"
+    - "Expected file presence check"
+    - "CSV row and column count check"
+    - "Duplicate row check"
+    - "Missing value summary"
 
 metrics:
   primary_metrics:
-    - name: "Metric Name"
-      definition: "Metric definition."
-      interpretation: "How to interpret this metric."
+    - name: "True Shooting Percentage"
+      definition: "Comprehensive scoring efficiency metric that incorporates two-point, three-point, and free-throw scoring."
+      interpretation: "Higher values indicate more efficient scoring quality for the player role and shot diet."
+    - name: "On/Off Rating"
+      definition: "Team performance differential when the player is on the court versus off the court."
+      interpretation: "Positive or stronger relative values suggest impact that may not fully appear in traditional box-score volume."
+    - name: "Expected Salary"
+      definition: "Model-side salary expectation used to compare a player's current 2026 salary against the framework's value estimate."
+      interpretation: "A higher expected salary than actual salary suggests retained surplus value."
   derived_metrics:
-    - name: "Derived Metric Name"
-      formula: "Formula or calculation logic."
-      interpretation: "How to interpret this metric."
+    - name: "Delta vs Comparable Salary"
+      formula: "2026 salary minus comparable-player average salary"
+      interpretation: "Negative values suggest the player is priced below the selected comparable set."
+    - name: "Scalability Score"
+      formula: "10-point rubric combining efficiency-to-usage signals, shot profile, on/off context, and supporting indicator slots."
+      interpretation: "Higher scores suggest better odds that value can hold if the role grows."
+    - name: "Salary Change 2025 to 2026"
+      formula: "2026 salary minus original 2025 salary reference"
+      interpretation: "Shows how much of the original undervaluation thesis has already been priced into the current market."
 
 data:
   raw_data_dir: "data/raw"
   processed_data_dir: "data/processed"
   expected_files:
-    - path: "data/processed/example.csv"
-      required: false
-      description: "Example processed dataset."
+    - path: "data/processed/top5_undervalued_panel.csv"
+      required: true
+      description: "Five-player retrospective panel with value, trend, and scalability fields."
+    - path: "data/processed/wnba_2026_contract_status.csv"
+      required: true
+      description: "Contract status table used for 2026 roster-control and salary context."
+    - path: "data/processed/wnba_2024_2026_salary_bridge.csv"
+      required: true
+      description: "Salary bridge linking recent player performance context to 2026 salary framing."
+    - path: "data/processed/wnba_2026_team_cap_table.csv"
+      required: true
+      description: "Team-level cap table used for roster construction context."
   required_columns: []
 
 validation:
-  fail_on_missing_required_files: false
+  fail_on_missing_required_files: true
   fail_on_duplicate_rows: false
   fail_on_missing_values: false
-  max_missing_pct_warning: 20
+  max_missing_pct_warning: 100
 
 publishing:
   deploy_github_pages: true
@@ -88,6 +127,10 @@ publishing:
 
 notes:
   limitations:
-    - "List known limitation."
+    - "This public repo ships a slim evidence bundle rather than the full upstream working environment."
+    - "Some retrospective judgments rely on the latest supported 2023-2025 row when a preferred 2025 sample is unavailable."
+    - "Contract framing is tied to the 2026 salary and roster-control context captured in the shipped evidence tables."
   next_steps:
-    - "List next step."
+    - "Backfill the live GitHub Pages URL into project_config.yml after deployment."
+    - "Add lightweight branch protection after the first successful private deployment."
+    - "Extend the repo with player-level briefs only if a broader public story is needed."

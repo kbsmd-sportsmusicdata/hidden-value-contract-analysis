@@ -1,36 +1,39 @@
-# Executive Summary: Project Title
+# Executive Summary: WNBA Undervalued Contract Retrospective
 
 ## Project Objective
 
-One-paragraph project description.
+This project revisits a five-player undervalued contract cohort to test which cases still hold up once the original hidden-value lens is reframed against 2026 salary levels, comparable-player context, and role-scalability evidence.
 
 ## Intended Audience
 
-- sports analytics portfolio reviewers
-- front office decision-makers
-- coaching staff
+- WNBA front office decision-makers
+- Salary cap and roster strategy staff
+- Sports analytics portfolio reviewers
 
 ## Key Questions
 
-- What question does this project answer?
-- What decision does this analysis support?
+- Which originally flagged undervalued players still grade as salary surplus in the 2026 market?
+- Which players show scalable hidden value even when market pricing has corrected?
+- Which cases now read as fair market, corrected, or higher-risk bets?
 
 ## Decision-Support Value
 
-Add short explanation of how this project supports decisions.
+The notebook gives decision-makers a compact way to compare contract surplus, current comp pricing, and scale-up potential in the same frame. Instead of treating all five original cases as equal bargains, it separates retained surplus from corrected pricing and helps clarify whether a player is a true acquisition value, a fair-market rotation piece, or a more conditional bet.
 
 ## Top Findings
 
-1. Add finding.
-2. Add finding.
-3. Add finding.
+1. Leonie Fiebich remains the cleanest retained surplus case, combining top-end efficiency and strong impact context with a 2026 salary that still reads below the model and comp frame.
+2. Naz Hillmon and Jordan Horston continue to show strong hidden-value and scalability signals, but their current salary positioning looks closer to market-corrected than clear bargain territory.
+3. Emily Engstler and Nyara Sabally still offer useful role-player value, but the refreshed evidence makes both cases more mixed and context-dependent than the original undervalued framing suggested.
 
 ## Recommended Use Cases
 
-- player evaluation
-- roster analysis
-- data storytelling
+- Contract surplus review
+- Rotation value triage
+- Minutes scalability evaluation
 
 ## Limitations
 
-- List known limitation.
+- This public repo ships a slim evidence bundle rather than the full upstream working environment.
+- Some retrospective judgments rely on the latest supported 2023-2025 row when a preferred 2025 sample is unavailable.
+- Contract framing is tied to the 2026 salary and roster-control context captured in the shipped evidence tables.
