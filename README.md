@@ -4,6 +4,13 @@
 
 This project revisits a five-player undervalued contract cohort to test which cases still hold up once the original hidden-value lens is reframed against 2026 salary levels, comparable-player context, and role-scalability evidence. The repo is intentionally slim: the notebook is the main public deliverable, and the supporting CSVs act as evidence tables rather than a full reproducibility dump.
 
+## Preview
+
+<p align="center">
+  <img src="assets/hidden_value_contract_notebook_preview.png" alt="WNBA undervalued contract retrospective notebook preview showing player value tiers, salary context, and scalability signals" width="850">
+</p>
+
+
 ## Live Project
 
 - HTML Notebook: https://kbsmd-sportsmusicdata.github.io/hidden-value-contract-analysis/
