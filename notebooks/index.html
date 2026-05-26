@@ -5,6 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>WNBA Undervalued Contract Retrospective</title>
+<!-- Final predeploy polish: sequential section numbering, consistent radar labels, inline SVG badge icons, accessible tooltip hooks. -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@500;600;700;800&family=Oswald:wght@500;600;700&family=Permanent+Marker&display=swap');
 :root {
@@ -78,7 +79,8 @@ details[open] .chev:after{content:" ↑"} details:not([open]) .chev:after{conten
 .panel{padding:24px;overflow:hidden}
 .panel h3{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);font-size:1.45rem;margin:0 0 8px}
 .panel p{line-height:1.62;color:#4f4c58}
-.badge-row{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:10px;margin-top:18px}
+.badge-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.badge-row .mock-badge:last-child{grid-column:1/-1}
 .signal-badge,.table-badge{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:9px 13px;font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.02em}
 .signal-badge.underpay,.table-badge.strong{background:#e8f0fb;color:#174985;border:1px solid #9bb9de}
 .signal-badge.market,.table-badge.market{background:#f5f0e8;color:#67533f;border:1px solid #c9bda8}
@@ -165,7 +167,7 @@ blockquote{margin:18px 0;background:rgba(244,227,195,.55);border:1.5px solid rgb
   font-weight:700;
 }
 .mock-badge.underpay{border-color:#9BB9DE;color:#255C9A;background:#F3F7FE}
-.mock-badge.clear{border-color:#A9C2E3;color:#2F6AA4;background:#F5F8FE}
+.mock-badge.clear{border-color:#8ECFD2;color:#287A83;background:#EEFAFA}
 .mock-badge.market{border-color:#BFB8AC;color:#625D57;background:#F6F3EE}
 .mock-badge.mixed{border-color:#D9A35A;color:#A45E12;background:#FFF4E8}
 .mock-badge.good{border-color:#9FC59D;color:#2F7D54;background:#EFF8EF}
@@ -198,9 +200,9 @@ th,td{padding:13px 14px;text-align:left;border-bottom:1px solid #ece5d8;font-siz
 .callout{background:linear-gradient(135deg,#f8e8c8,#fffaf1);border:1px solid #ead4a9;border-radius:22px;padding:22px;box-shadow:var(--shadow)}
 .callout h3{font-family:Oswald;text-transform:uppercase;color:var(--navy);margin:0 0 8px;font-size:1.45rem}
 .placeholder{border:2px dashed #cbbadf;background:rgba(255,255,255,.58);border-radius:22px;padding:22px}
-.footer{margin-top:36px;padding:28px;border-radius:24px;background:var(--violet);color:white;box-shadow:var(--shadow)}
-.footer h2{font-family:Oswald;text-transform:uppercase;font-size:2rem;margin:0 0 10px}
-.footer p{line-height:1.65;max-width:880px}
+.footer{margin-top:28px;padding:24px 28px;border-radius:22px;background:var(--violet);color:white;box-shadow:var(--shadow)}
+.footer h2{font-family:Oswald;text-transform:uppercase;font-size:1.9rem;margin:0 0 8px}
+.footer p{line-height:1.58;max-width:1120px;margin:0}
 
 .avatar.headshot{overflow:hidden;background:var(--lav)}
 .avatar.headshot img{width:100%;height:100%;object-fit:cover;display:block}
@@ -435,7 +437,7 @@ details summary:focus-visible {
 
 @media(max-width:900px){.profile-extras{grid-template-columns:1fr}.radar-block{max-width:320px;margin:0 auto}.scalability-card{justify-content:flex-start}.scatter-wrap{padding:8px}}
 
-@media(max-width:1000px){.badge-row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.badge-row{grid-template-columns:1fr}.badge-row .mock-badge:last-child{grid-column:auto}}
 @media(max-width:900px){.hero,.grid-2,.player-grid,.method-content{grid-template-columns:1fr}.card-top{grid-template-columns:70px 1fr}.accuracy-badge{grid-column:1/-1}.chart-row{grid-template-columns:1fr}.chart-value{text-align:right}.signal-grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -468,11 +470,11 @@ details summary:focus-visible {
 <h3>Accuracy rubric</h3>
 <p>The story avoids fake precision. A player can be underpaid, market-corrected, mixed, or incomplete. The goal is not to force every pick into a win column — it is to show analyst judgment.</p>
 <div class="badge-row">
-<div aria-label="Significant underpay — Strong value edge" class="mock-badge underpay" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 7l6 6 6-6"></path><path d="M6 13l6 6 6-6"></path></svg></div><div><b>Significant underpay</b><span>Strong value edge</span></div></div>
-<div aria-label="Clear underpay — Value opportunity" class="mock-badge clear" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 8l6 8 6-8"></path></svg></div><div><b>Clear underpay</b><span>Value opportunity</span></div></div>
-<div aria-label="Market-corrected — Aligned with comps" class="mock-badge market" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 9h14"></path><path d="M5 15h14"></path></svg></div><div><b>Market-corrected</b><span>Aligned with comps</span></div></div>
-<div aria-label="Mixed / needs check-in — More context required" class="mock-badge mixed" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="10.5" cy="10.5" r="5.5"></circle><path d="M15 15l5 5"></path></svg></div><div><b>Mixed / needs check-in</b><span>More context required</span></div></div>
-<div aria-label="Improved / validated — Performance trending up" class="mock-badge good" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 17l6-6 4 4 6-8"></path><path d="M14 7h6v6"></path></svg></div><div><b>Improved / validated</b><span>Performance trending up</span></div></div>
+<div aria-label="Significant underpay — Strong value edge" class="mock-badge underpay" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 7l6 6 6-6"></path><path d="M6 13l6 6 6-6"></path></svg></div><div><b>Significant underpay</b><span>Strong value edge</span></div></div>
+<div aria-label="Clear underpay — Value opportunity" class="mock-badge clear" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 8l6 8 6-8"></path></svg></div><div><b>Clear underpay</b><span>Value opportunity</span></div></div>
+<div aria-label="Market-corrected — Aligned with comps" class="mock-badge market" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 9h14"></path><path d="M5 15h14"></path></svg></div><div><b>Market-corrected</b><span>Aligned with comps</span></div></div>
+<div aria-label="Mixed / needs check-in — More context required" class="mock-badge mixed" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="5.5"></circle><path d="M15 15l5 5"></path></svg></div><div><b>Mixed / needs check-in</b><span>More context required</span></div></div>
+<div aria-label="Improved / validated — Performance trending up" class="mock-badge good" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 17l6-6 4 4 6-8"></path><path d="M14 7h6v6"></path></svg></div><div><b>Improved / validated</b><span>Performance trending up</span></div></div>
 </div>
 <div class="coach-note small">the model is not graded on being perfect — it is graded on whether the evidence still points in the same direction.</div>
 </div>
@@ -522,7 +524,7 @@ details summary:focus-visible {
 <div class="profile-extras">
 <div class="radar-block">
 <div class="radar-title"><b>Radar profile</b><span>Position percentiles + scalability score</span></div>
-<svg aria-label="Leonie Fiebich radar profile" class="radar-svg" role="img" viewbox="-8 -8 236 236"><title>Leonie Fiebich radar profile: position percentiles plus scalability confidence</title>
+<svg aria-label="Leonie Fiebich radar profile" class="radar-svg" role="img" viewBox="-8 -8 236 236"><title>Leonie Fiebich radar profile: position percentiles plus scalability confidence</title>
 <polygon class="radar-ring" points="110.0,86.0 125.6,95.0 125.6,113.0 110.0,122.0 94.4,113.0 94.4,95.0"></polygon><polygon class="radar-ring" points="110.0,68.0 141.2,86.0 141.2,122.0 110.0,140.0 78.8,122.0 78.8,86.0"></polygon><polygon class="radar-ring" points="110.0,50.0 156.8,77.0 156.8,131.0 110.0,158.0 63.2,131.0 63.2,77.0"></polygon><polygon class="radar-ring" points="110.0,32.0 172.4,68.0 172.4,140.0 110.0,176.0 47.6,140.0 47.6,68.0"></polygon><line class="radar-axis" x1="110" x2="110.0" y1="104" y2="32.0"></line><line class="radar-axis" x1="110" x2="172.4" y1="104" y2="68.0"></line><line class="radar-axis" x1="110" x2="172.4" y1="104" y2="140.0"></line><line class="radar-axis" x1="110" x2="110.0" y1="104" y2="176.0"></line><line class="radar-axis" x1="110" x2="47.6" y1="104" y2="140.0"></line><line class="radar-axis" x1="110" x2="47.6" y1="104" y2="68.0"></line>
 <polygon aria-label="Leonie Fiebich radar profile" class="radar-poly" data-tip="Leonie Fiebich radar profile" points="110.0,33.9 135.2,89.4 132.5,117.0 110.0,109.7 60.1,132.8 75.1,83.8" tabindex="0"></polygon>
 <circle aria-label="Leonie Fiebich TS%: 97th percentile 👑" class="radar-point" cx="110.0" cy="33.9" data-tip="Leonie Fiebich&lt;br&gt;TS%: 97th percentile 👑" r="3.6" tabindex="0"></circle><circle aria-label="Leonie Fiebich Steals: 40th percentile" class="radar-point" cx="135.2" cy="89.4" data-tip="Leonie Fiebich&lt;br&gt;Steals: 40th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Leonie Fiebich Blocks: 36th percentile" class="radar-point" cx="132.5" cy="117.0" data-tip="Leonie Fiebich&lt;br&gt;Blocks: 36th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Leonie Fiebich Rebounds: 8th percentile" class="radar-point" cx="110.0" cy="109.7" data-tip="Leonie Fiebich&lt;br&gt;Rebounds: 8th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Leonie Fiebich On/Off: 80th percentile" class="radar-point" cx="60.1" cy="132.8" data-tip="Leonie Fiebich&lt;br&gt;On/Off: 80th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Leonie Fiebich Scalability confidence: 56%" class="radar-point" cx="75.1" cy="83.8" data-tip="Leonie Fiebich&lt;br&gt;Scalability confidence: 56%" r="3.6" tabindex="0"></circle>
@@ -553,9 +555,9 @@ details summary:focus-visible {
 </div>
 </div>
 <div class="player-signal-badges">
-<div aria-label="2025: Significant underpay — Strong value edge" class="mock-badge underpay" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 7l6 6 6-6"></path><path d="M6 13l6 6 6-6"></path></svg></div><div><b>2025: Significant underpay</b><span>Strong value edge</span></div></div>
-<div aria-label="2026: Significant underpay — Still far below comps" class="mock-badge underpay" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 7l6 6 6-6"></path><path d="M6 13l6 6 6-6"></path></svg></div><div><b>2026: Significant underpay</b><span>Still far below comps</span></div></div>
-<div aria-label="Stable strong — Impact profile held" class="mock-badge good" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 17l6-6 4 4 6-8"></path><path d="M14 7h6v6"></path></svg></div><div><b>Stable strong</b><span>Impact profile held</span></div></div>
+<div aria-label="2025: Significant underpay — Strong value edge" class="mock-badge underpay" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 7l6 6 6-6"></path><path d="M6 13l6 6 6-6"></path></svg></div><div><b>2025: Significant underpay</b><span>Strong value edge</span></div></div>
+<div aria-label="2026: Significant underpay — Still far below comps" class="mock-badge underpay" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 7l6 6 6-6"></path><path d="M6 13l6 6 6-6"></path></svg></div><div><b>2026: Significant underpay</b><span>Still far below comps</span></div></div>
+<div aria-label="Stable strong — Impact profile held" class="mock-badge good" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 17l6-6 4 4 6-8"></path><path d="M14 7h6v6"></path></svg></div><div><b>Stable strong</b><span>Impact profile held</span></div></div>
 </div>
 </article>
 <article class="player-card strong">
@@ -594,7 +596,7 @@ details summary:focus-visible {
 <div class="profile-extras">
 <div class="radar-block">
 <div class="radar-title"><b>Radar profile</b><span>Position percentiles + scalability score</span></div>
-<svg aria-label="Emily Engstler radar profile" class="radar-svg" role="img" viewbox="-8 -8 236 236"><title>Emily Engstler radar profile: position percentiles plus scalability confidence</title>
+<svg aria-label="Emily Engstler radar profile" class="radar-svg" role="img" viewBox="-8 -8 236 236"><title>Emily Engstler radar profile: position percentiles plus scalability confidence</title>
 <polygon class="radar-ring" points="110.0,86.0 125.6,95.0 125.6,113.0 110.0,122.0 94.4,113.0 94.4,95.0"></polygon><polygon class="radar-ring" points="110.0,68.0 141.2,86.0 141.2,122.0 110.0,140.0 78.8,122.0 78.8,86.0"></polygon><polygon class="radar-ring" points="110.0,50.0 156.8,77.0 156.8,131.0 110.0,158.0 63.2,131.0 63.2,77.0"></polygon><polygon class="radar-ring" points="110.0,32.0 172.4,68.0 172.4,140.0 110.0,176.0 47.6,140.0 47.6,68.0"></polygon><line class="radar-axis" x1="110" x2="110.0" y1="104" y2="32.0"></line><line class="radar-axis" x1="110" x2="172.4" y1="104" y2="68.0"></line><line class="radar-axis" x1="110" x2="172.4" y1="104" y2="140.0"></line><line class="radar-axis" x1="110" x2="110.0" y1="104" y2="176.0"></line><line class="radar-axis" x1="110" x2="47.6" y1="104" y2="140.0"></line><line class="radar-axis" x1="110" x2="47.6" y1="104" y2="68.0"></line>
 <polygon aria-label="Emily Engstler radar profile" class="radar-poly" data-tip="Emily Engstler radar profile" points="110.0,85.0 165.9,71.7 165.9,136.3 110.0,154.1 81.3,120.6 67.0,79.2" tabindex="0"></polygon>
 <circle aria-label="Emily Engstler TS%: 26th percentile" class="radar-point" cx="110.0" cy="85.0" data-tip="Emily Engstler&lt;br&gt;TS%: 26th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Emily Engstler Steals: 90th percentile" class="radar-point" cx="165.9" cy="71.7" data-tip="Emily Engstler&lt;br&gt;Steals: 90th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Emily Engstler Blocks: 90th percentile" class="radar-point" cx="165.9" cy="136.3" data-tip="Emily Engstler&lt;br&gt;Blocks: 90th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Emily Engstler Rebounds: 70th percentile" class="radar-point" cx="110.0" cy="154.1" data-tip="Emily Engstler&lt;br&gt;Rebounds: 70th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Emily Engstler On/Off: 46th percentile" class="radar-point" cx="81.3" cy="120.6" data-tip="Emily Engstler&lt;br&gt;On/Off: 46th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Emily Engstler Scalability confidence: 69%" class="radar-point" cx="67.0" cy="79.2" data-tip="Emily Engstler&lt;br&gt;Scalability confidence: 69%" r="3.6" tabindex="0"></circle>
@@ -625,9 +627,9 @@ details summary:focus-visible {
 </div>
 </div>
 <div class="player-signal-badges">
-<div aria-label="2025: Significant underpay — Strong value edge" class="mock-badge underpay" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 7l6 6 6-6"></path><path d="M6 13l6 6 6-6"></path></svg></div><div><b>2025: Significant underpay</b><span>Strong value edge</span></div></div>
-<div aria-label="2026: Clear underpay — Value opportunity" class="mock-badge clear" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 8l6 8 6-8"></path></svg></div><div><b>2026: Clear underpay</b><span>Value opportunity</span></div></div>
-<div aria-label="Improved / validated — Performance trending up" class="mock-badge good" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 17l6-6 4 4 6-8"></path><path d="M14 7h6v6"></path></svg></div><div><b>Improved / validated</b><span>Performance trending up</span></div></div>
+<div aria-label="2025: Significant underpay — Strong value edge" class="mock-badge underpay" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 7l6 6 6-6"></path><path d="M6 13l6 6 6-6"></path></svg></div><div><b>2025: Significant underpay</b><span>Strong value edge</span></div></div>
+<div aria-label="2026: Clear underpay — Value opportunity" class="mock-badge clear" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 8l6 8 6-8"></path></svg></div><div><b>2026: Clear underpay</b><span>Value opportunity</span></div></div>
+<div aria-label="Improved / validated — Performance trending up" class="mock-badge good" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 17l6-6 4 4 6-8"></path><path d="M14 7h6v6"></path></svg></div><div><b>Improved / validated</b><span>Performance trending up</span></div></div>
 </div>
 </article>
 <article class="player-card market">
@@ -666,7 +668,7 @@ details summary:focus-visible {
 <div class="profile-extras">
 <div class="radar-block">
 <div class="radar-title"><b>Radar profile</b><span>Position percentiles + scalability score</span></div>
-<svg aria-label="Naz Hillmon radar profile" class="radar-svg" role="img" viewbox="-8 -8 236 236"><title>Naz Hillmon radar profile: position percentiles plus scalability confidence</title>
+<svg aria-label="Naz Hillmon radar profile" class="radar-svg" role="img" viewBox="-8 -8 236 236"><title>Naz Hillmon radar profile: position percentiles plus scalability confidence</title>
 <polygon class="radar-ring" points="110.0,86.0 125.6,95.0 125.6,113.0 110.0,122.0 94.4,113.0 94.4,95.0"></polygon><polygon class="radar-ring" points="110.0,68.0 141.2,86.0 141.2,122.0 110.0,140.0 78.8,122.0 78.8,86.0"></polygon><polygon class="radar-ring" points="110.0,50.0 156.8,77.0 156.8,131.0 110.0,158.0 63.2,131.0 63.2,77.0"></polygon><polygon class="radar-ring" points="110.0,32.0 172.4,68.0 172.4,140.0 110.0,176.0 47.6,140.0 47.6,68.0"></polygon><line class="radar-axis" x1="110" x2="110.0" y1="104" y2="32.0"></line><line class="radar-axis" x1="110" x2="172.4" y1="104" y2="68.0"></line><line class="radar-axis" x1="110" x2="172.4" y1="104" y2="140.0"></line><line class="radar-axis" x1="110" x2="110.0" y1="104" y2="176.0"></line><line class="radar-axis" x1="110" x2="47.6" y1="104" y2="140.0"></line><line class="radar-axis" x1="110" x2="47.6" y1="104" y2="68.0"></line>
 <polygon aria-label="Naz Hillmon radar profile" class="radar-poly" data-tip="Naz Hillmon radar profile" points="110.0,49.0 116.9,100.0 140.9,121.9 110.0,149.8 50.1,138.6 55.1,72.3" tabindex="0"></polygon>
 <circle aria-label="Naz Hillmon TS%: 76th percentile" class="radar-point" cx="110.0" cy="49.0" data-tip="Naz Hillmon&lt;br&gt;TS%: 76th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Naz Hillmon Steals: 11th percentile" class="radar-point" cx="116.9" cy="100.0" data-tip="Naz Hillmon&lt;br&gt;Steals: 11th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Naz Hillmon Blocks: 50th percentile" class="radar-point" cx="140.9" cy="121.9" data-tip="Naz Hillmon&lt;br&gt;Blocks: 50th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Naz Hillmon Rebounds: 64th percentile" class="radar-point" cx="110.0" cy="149.8" data-tip="Naz Hillmon&lt;br&gt;Rebounds: 64th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Naz Hillmon On/Off: 96th percentile 👑" class="radar-point" cx="50.1" cy="138.6" data-tip="Naz Hillmon&lt;br&gt;On/Off: 96th percentile 👑" r="3.6" tabindex="0"></circle><circle aria-label="Naz Hillmon Scalability confidence: 88%" class="radar-point" cx="55.1" cy="72.3" data-tip="Naz Hillmon&lt;br&gt;Scalability confidence: 88%" r="3.6" tabindex="0"></circle>
@@ -697,9 +699,9 @@ details summary:focus-visible {
 </div>
 </div>
 <div class="player-signal-badges">
-<div aria-label="2025: Mild underpay — Nearer to comps" class="mock-badge market" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 9h14"></path><path d="M5 15h14"></path></svg></div><div><b>2025: Mild underpay</b><span>Nearer to comps</span></div></div>
-<div aria-label="2026: Clear underpay — Still below comp market" class="mock-badge clear" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 8l6 8 6-8"></path></svg></div><div><b>2026: Clear underpay</b><span>Still below comp market</span></div></div>
-<div aria-label="Improved / validated — Role growth confirmed" class="mock-badge good" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 17l6-6 4 4 6-8"></path><path d="M14 7h6v6"></path></svg></div><div><b>Improved / validated</b><span>Role growth confirmed</span></div></div>
+<div aria-label="2025: Mild underpay — Nearer to comps" class="mock-badge market" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 9h14"></path><path d="M5 15h14"></path></svg></div><div><b>2025: Mild underpay</b><span>Nearer to comps</span></div></div>
+<div aria-label="2026: Clear underpay — Still below comp market" class="mock-badge clear" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 8l6 8 6-8"></path></svg></div><div><b>2026: Clear underpay</b><span>Still below comp market</span></div></div>
+<div aria-label="Improved / validated — Role growth confirmed" class="mock-badge good" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 17l6-6 4 4 6-8"></path><path d="M14 7h6v6"></path></svg></div><div><b>Improved / validated</b><span>Role growth confirmed</span></div></div>
 </div>
 </article>
 <article class="player-card mixed">
@@ -738,7 +740,7 @@ details summary:focus-visible {
 <div class="profile-extras">
 <div class="radar-block">
 <div class="radar-title"><b>Radar profile</b><span>Position percentiles + scalability score</span></div>
-<svg aria-label="Nyara Sabally radar profile" class="radar-svg" role="img" viewbox="-8 -8 236 236"><title>Nyara Sabally radar profile: position percentiles plus scalability confidence</title>
+<svg aria-label="Nyara Sabally radar profile" class="radar-svg" role="img" viewBox="-8 -8 236 236"><title>Nyara Sabally radar profile: position percentiles plus scalability confidence</title>
 <polygon class="radar-ring" points="110.0,86.0 125.6,95.0 125.6,113.0 110.0,122.0 94.4,113.0 94.4,95.0"></polygon><polygon class="radar-ring" points="110.0,68.0 141.2,86.0 141.2,122.0 110.0,140.0 78.8,122.0 78.8,86.0"></polygon><polygon class="radar-ring" points="110.0,50.0 156.8,77.0 156.8,131.0 110.0,158.0 63.2,131.0 63.2,77.0"></polygon><polygon class="radar-ring" points="110.0,32.0 172.4,68.0 172.4,140.0 110.0,176.0 47.6,140.0 47.6,68.0"></polygon><line class="radar-axis" x1="110" x2="110.0" y1="104" y2="32.0"></line><line class="radar-axis" x1="110" x2="172.4" y1="104" y2="68.0"></line><line class="radar-axis" x1="110" x2="172.4" y1="104" y2="140.0"></line><line class="radar-axis" x1="110" x2="110.0" y1="104" y2="176.0"></line><line class="radar-axis" x1="110" x2="47.6" y1="104" y2="140.0"></line><line class="radar-axis" x1="110" x2="47.6" y1="104" y2="68.0"></line>
 <polygon aria-label="Nyara Sabally radar profile" class="radar-poly" data-tip="Nyara Sabally radar profile" points="110.0,80.0 144.0,84.4 161.8,133.9 110.0,145.1 66.6,129.1 82.6,88.2" tabindex="0"></polygon>
 <circle aria-label="Nyara Sabally TS%: 33rd percentile" class="radar-point" cx="110.0" cy="80.0" data-tip="Nyara Sabally&lt;br&gt;TS%: 33rd percentile" r="3.6" tabindex="0"></circle><circle aria-label="Nyara Sabally Steals: 55th percentile" class="radar-point" cx="144.0" cy="84.4" data-tip="Nyara Sabally&lt;br&gt;Steals: 55th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Nyara Sabally Blocks: 83rd percentile" class="radar-point" cx="161.8" cy="133.9" data-tip="Nyara Sabally&lt;br&gt;Blocks: 83rd percentile" r="3.6" tabindex="0"></circle><circle aria-label="Nyara Sabally Rebounds: 57th percentile" class="radar-point" cx="110.0" cy="145.1" data-tip="Nyara Sabally&lt;br&gt;Rebounds: 57th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Nyara Sabally On/Off: 70th percentile" class="radar-point" cx="66.6" cy="129.1" data-tip="Nyara Sabally&lt;br&gt;On/Off: 70th percentile" r="3.6" tabindex="0"></circle><circle aria-label="Nyara Sabally Scalability confidence: 44%" class="radar-point" cx="82.6" cy="88.2" data-tip="Nyara Sabally&lt;br&gt;Scalability confidence: 44%" r="3.6" tabindex="0"></circle>
@@ -769,9 +771,9 @@ details summary:focus-visible {
 </div>
 </div>
 <div class="player-signal-badges">
-<div aria-label="2025: Clear underpay — Original signal supported" class="mock-badge clear" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 8l6 8 6-8"></path></svg></div><div><b>2025: Clear underpay</b><span>Original signal supported</span></div></div>
-<div aria-label="2026: Above comps — Salary gap flipped" class="mock-badge positive" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></div><div><b>2026: Above comps</b><span>Salary gap flipped</span></div></div>
-<div aria-label="Mixed / needs check-in — More context required" class="mock-badge mixed" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="10.5" cy="10.5" r="5.5"></circle><path d="M15 15l5 5"></path></svg></div><div><b>Mixed / needs check-in</b><span>More context required</span></div></div>
+<div aria-label="2025: Clear underpay — Original signal supported" class="mock-badge clear" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 8l6 8 6-8"></path></svg></div><div><b>2025: Clear underpay</b><span>Original signal supported</span></div></div>
+<div aria-label="2026: Above comps — Salary gap flipped" class="mock-badge positive" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></div><div><b>2026: Above comps</b><span>Salary gap flipped</span></div></div>
+<div aria-label="Mixed / needs check-in — More context required" class="mock-badge mixed" tabindex="0"><div class="mock-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="5.5"></circle><path d="M15 15l5 5"></path></svg></div><div><b>Mixed / needs check-in</b><span>More context required</span></div></div>
 </div>
 </article></div>
 </section>
@@ -780,7 +782,7 @@ details summary:focus-visible {
 <div class="panel">
 <p>Scalability uses the refresh layer’s confidence score and usage context. It is a directional read: who has room to scale, and who needs a stronger 2026 check-in before the value claim gets louder.</p>
 <div class="scatter-wrap">
-<svg aria-label="Scalability by usage rate scatterplot" class="scatter-svg" role="img" viewbox="0 0 640 420"><title>Scalability by usage rate scatterplot</title>
+<svg aria-label="Scalability by usage rate scatterplot" class="scatter-svg" role="img" viewBox="0 0 640 420"><title>Scalability by usage rate scatterplot</title>
 <rect fill="rgba(133,176,154,.17)" height="134.4" width="375.0" x="70" y="40"></rect>
 <rect fill="rgba(108,154,195,.13)" height="134.4" width="125.0" x="445.0" y="40"></rect>
 <rect fill="rgba(255,255,255,.42)" height="185.6" width="375.0" x="70" y="174.4"></rect>
@@ -895,35 +897,7 @@ details summary:focus-visible {
 </div></div>
 </div>
 </section>
-<section class="section grid-2">
-<div class="panel">
-<h3>Salary gap bars</h3>
-<p>Examples below show the component pattern: target salary vs median comp salary, with the gap made explicit.</p>
-<div class="mini-gap">
-<div class="mini-head"><b>2025</b><span class="gap-pill neg">-$68,905 (-50.1%)</span></div>
-<div class="bar-line"><span>Target</span><div class="rail"><i class="target" style="width:49.9%"></i></div><strong>$68,595</strong></div>
-<div class="bar-line"><span>Median comp</span><div class="rail"><i class="comp" style="width:100.0%"></i></div><strong>$137,500</strong></div>
-</div><div class="mini-gap">
-<div class="mini-head"><b>2026</b><span class="gap-pill neg">-$721,490 (-71.1%)</span></div>
-<div class="bar-line"><span>Target</span><div class="rail"><i class="target" style="width:28.9%"></i></div><strong>$293,510</strong></div>
-<div class="bar-line"><span>Median comp</span><div class="rail"><i class="comp" style="width:100.0%"></i></div><strong>$1,015,000</strong></div>
-</div>
-<div class="mini-gap">
-<div class="mini-head"><b>2025</b><span class="gap-pill neg">-$51,961 (-39.1%)</span></div>
-<div class="bar-line"><span>Target</span><div class="rail"><i class="target" style="width:60.9%"></i></div><strong>$81,079</strong></div>
-<div class="bar-line"><span>Median comp</span><div class="rail"><i class="comp" style="width:100.0%"></i></div><strong>$133,040</strong></div>
-</div><div class="mini-gap">
-<div class="mini-head"><b>2026</b><span class="gap-pill neg">-$106,521 (-27.7%)</span></div>
-<div class="bar-line"><span>Target</span><div class="rail"><i class="target" style="width:72.3%"></i></div><strong>$277,500</strong></div>
-<div class="bar-line"><span>Median comp</span><div class="rail"><i class="comp" style="width:100.0%"></i></div><strong>$384,021</strong></div>
-</div>
-</div>
-<div class="callout">
-<h3>Why the heat map moved up</h3>
-<p>The cap-share check now appears directly after scalability because the story beat is cleaner: first, can the role scale? Then, is the market paying the player like that value scaled?</p>
-<p>The salary bars here stay as supporting evidence for the original validation and market-reset checks.</p>
-</div>
-</section>
+
 <section class="section">
 <div class="section-head"><span class="num">5</span><h2>Final accuracy matrix</h2></div>
 <div class="panel">
