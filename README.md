@@ -83,8 +83,9 @@ python scripts/validate_data.py
 python scripts/publish_check.py
 ```
 
-## Next Steps
+# Future Extensions
 
-- Backfill the live GitHub Pages URL into `project_config.yml` after deployment.
-- Add lightweight branch protection after the first successful private deployment.
-- Expand the repo with player-level briefs only if a broader public story is needed.
+- Add individual one-page player briefs for each contract case
+- Expand the cohort beyond the original class assignment of five players
+- Add a lightweight comparison table for salary tier, production tier, and scalability tier
+- Add 2026 data; update at midseason and again at end of season
